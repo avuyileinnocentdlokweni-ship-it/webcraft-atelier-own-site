@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Harven &amp; Sons Construction — get a free quote for your custom home or renovation project in Western North Carolina.">
+  <title>Contact | Harven &amp; Sons Construction</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="nav-target"></div>
+
+  <!-- ═══ PAGE HERO ═══ -->
+  <section class="page-hero">
+    <div class="hero-bg" style="background-color:var(--green); background-image:url('https://images.unsplash.com/photo-1613977257363-707ba9a6ca80?w=1600&q=80');"></div>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span>Contact</span>
+        </div>
+        <h1>Let's Talk About Your Project</h1>
+        <p>We respond to every inquiry within one business day. No obligation, no pressure.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT SECTION ═══ -->
+  <section class="section-pad bg-cream">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- FORM -->
+        <div class="fade-up">
+          <div class="section-header">
+            <div class="label">Get a Free Quote</div>
+            <h2>Tell Us About Your Project</h2>
+            <div class="divider"></div>
+            <p>Fill out the form and we'll be in touch within one business day to set up a free consultation.</p>
+          </div>
+
+          <div class="contact-form">
+            <form id="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="first-name">First Name <span style="color:var(--brass)">*</span></label>
+                  <input type="text" id="first-name" name="first_name" placeholder="Robert" required>
+                </div>
+                <div class="form-group">
+                  <label for="last-name">Last Name <span style="color:var(--brass)">*</span></label>
+                  <input type="text" id="last-name" name="last_name" placeholder="Harven" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">Email Address <span style="color:var(--brass)">*</span></label>
+                  <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" placeholder="+1 (828) 000-0000">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="service">Service You're Interested In <span style="color:var(--brass)">*</span></label>
+                <select id="service" name="service" required>
+                  <option value="" disabled selected>Select a service…</option>
+                  <option value="custom-home">Custom Home Building</option>
+                  <option value="kitchen-bath">Kitchen &amp; Bathroom Renovation</option>
+                  <option value="addition">Room Addition</option>
+                  <option value="outdoor">Deck &amp; Outdoor Structures</option>
+                  <option value="historic">Historic Home Restoration</option>
+                  <option value="other">Other / Not Sure Yet</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="location">Project Location</label>
+                  <input type="text" id="location" name="location" placeholder="Asheville, NC">
+                </div>
+                <div class="form-group">
+                  <label for="timeline">Desired Timeline</label>
+                  <select id="timeline" name="timeline">
+                    <option value="" disabled selected>When are you looking to start?</option>
+                    <option value="asap">As soon as possible</option>
+                    <option value="1-3mo">Within 1–3 months</option>
+                    <option value="3-6mo">3–6 months from now</option>
+                    <option value="6mo+">6+ months out</option>
+                    <option value="planning">Still planning / just exploring</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="budget">Approximate Budget</label>
+                <select id="budget" name="budget">
+                  <option value="" disabled selected>Select a range (optional)…</option>
+                  <option value="under50k">Under $50,000</option>
+                  <option value="50-100k">$50,000 – $100,000</option>
+                  <option value="100-250k">$100,000 – $250,000</option>
+                  <option value="250-500k">$250,000 – $500,000</option>
+                  <option value="500k+">$500,000+</option>
+                  <option value="unsure">Not sure yet</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Tell Us About Your Project <span style="color:var(--brass)">*</span></label>
+                <textarea id="message" name="message" placeholder="Describe what you have in mind — the more detail you share, the better we can prepare for our conversation…" required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="how-heard">How Did You Hear About Us?</label>
+                <select id="how-heard" name="how_heard">
+                  <option value="" disabled selected>Select one…</option>
+                  <option value="referral">Friend or family referral</option>
+                  <option value="google">Google search</option>
+                  <option value="facebook">Facebook</option>
+                  <option value="nextdoor">Nextdoor</option>
+                  <option value="drive-by">Drove past a job site</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-submit">
+                <button type="submit" class="btn btn-primary">Send My Request</button>
+              </div>
+              <p class="form-note">We respect your privacy. Your information is never shared or sold.</p>
+
+              <div class="form-success" id="form-success">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:inline;vertical-align:middle;margin-right:.4rem"><polyline points="20 6 9 17 4 12"/></svg>
+                Thank you! We've received your request and will be in touch within one business day.
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- CONTACT INFO -->
+        <div class="fade-up" style="transition-delay:.12s">
+          <div class="section-header">
+            <div class="label">Reach Us Directly</div>
+            <h2>Contact Information</h2>
+            <div class="divider"></div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.27a16 16 0 0 0 5.82 5.82l1.33-1.34a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">Phone</div>
+              <div class="contact-detail-val"><a href="tel:+18285540192">+1 828-554-0192</a></div>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">Email</div>
+              <div class="contact-detail-val"><a href="mailto:info@harvenandsons.com">info@harvenandsons.com</a></div>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">Office</div>
+              <div class="contact-detail-val">Asheville, North Carolina<br>Serving Buncombe, Henderson &amp; Transylvania Counties</div>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">Office Hours</div>
+              <div class="contact-detail-val">
+                Monday – Friday: 7:00 am – 5:00 pm<br>
+                Saturday: By appointment<br>
+                Sunday: Closed
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">License</div>
+              <div class="contact-detail-val">NC General Contractor License #44821<br>Fully Bonded &amp; Insured</div>
+            </div>
+          </div>
+
+          <!-- Map placeholder -->
+          <div class="map-placeholder">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Asheville, NC — Blue Ridge Mountains</span>
+          </div>
+
+          <!-- Quick response badge -->
+          <div style="margin-top:1.5rem; background:rgba(45,74,45,.07); border:1px solid rgba(45,74,45,.15); border-radius:var(--radius); padding:1rem 1.25rem; display:flex; align-items:center; gap:.75rem;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <div>
+              <div style="font-weight:600; font-size:.875rem; color:var(--dark);">We respond within 1 business day</div>
+              <div style="font-size:.78rem; color:var(--gray);">Linda Harven personally handles all new project inquiries.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <section class="section-pad" style="background:var(--cream-dark);">
+    <div class="container" style="max-width:760px;">
+      <div class="section-header center fade-up">
+        <div class="label">Common Questions</div>
+        <h2>Before You Reach Out</h2>
+        <div class="divider divider-center"></div>
+      </div>
+      <div class="faq-list fade-up">
+
+        <details class="faq-item">
+          <summary class="faq-q">How long does a custom home build take?</summary>
+          <p class="faq-a">Timelines vary by project size and complexity, but most custom homes take between 8 and 14 months from permit approval to final walkthrough. We'll give you a realistic schedule during your consultation and keep you updated throughout the build.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Do you work with architects, or do I need to hire one separately?</summary>
+          <p class="faq-a">We have long-standing relationships with several architects in the Asheville area and are happy to connect you with the right fit. That said, we can also work with any architect you've already chosen — our job is to build the vision, not own it.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">What counties do you serve?</summary>
+          <p class="faq-a">Our primary service area includes Buncombe, Henderson, and Transylvania counties. We also take select projects in surrounding areas depending on scope — just ask and we'll let you know.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Is a deposit required to start a project?</summary>
+          <p class="faq-a">Yes — we require a deposit before mobilizing on any project. The amount and payment schedule are outlined clearly in your written contract before work begins. We never ask for large upfront sums; payments are tied to project milestones.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Are you licensed and insured?</summary>
+          <p class="faq-a">Absolutely. We hold NC General Contractor License #44821 and carry full general liability and workers' compensation insurance on every project. We're also EPA Lead-Safe Certified for older home work. Documentation is available upon request.</p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .faq-item {
+      border-bottom: 1px solid rgba(0,0,0,.1);
+      padding-block: 1.1rem;
+    }
+    .faq-item:first-child { border-top: 1px solid rgba(0,0,0,.1); }
+    .faq-q {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--dark);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      user-select: none;
+    }
+    .faq-q::-webkit-details-marker { display: none; }
+    .faq-q::after {
+      content: '+';
+      font-size: 1.4rem;
+      color: var(--brass);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      flex-shrink: 0;
+      transition: transform .25s ease;
+    }
+    details[open] .faq-q::after { transform: rotate(45deg); }
+    .faq-a {
+      padding-top: .75rem;
+      font-size: .9rem;
+      color: var(--gray);
+      line-height: 1.7;
+      margin: 0;
+    }
+  </style>
+
+  <!-- ═══ CTA ═══ -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Still have questions?</h2>
+      <p>Give us a call — Robert, Dale, or Linda will pick up and talk it through with you.</p>
+      <a href="tel:+18285540192" class="btn btn-primary" style="margin-right:.75rem">Call 828-554-0192</a>
+      <a href="mailto:info@harvenandsons.com" class="btn btn-outline">Email Us</a>
+    </div>
+  </section>
+
+  <div id="footer-target"></div>
+
+  <script src="components.js"></script>
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const required = this.querySelectorAll('[required]');
+      let valid = true;
+      required.forEach(field => {
+        if (!field.value.trim()) {
+          valid = false;
+          field.style.borderColor = '#c0392b';
+          field.addEventListener('input', () => field.style.borderColor = '', { once: true });
+        }
+      });
+
+      if (!valid) return;
+
+      // Simulate submission
+      const btn = this.querySelector('[type="submit"]');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        this.reset();
+        btn.textContent = 'Send My Request';
+        btn.disabled = false;
+        document.getElementById('form-success').style.display = 'block';
+        document.getElementById('form-success').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 1200);
+    });
+  </script>
+</body>
+</html>
