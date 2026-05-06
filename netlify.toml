@@ -1,0 +1,52 @@
+# ── WebCraft Atelier — netlify.toml ──────────────────────────────────────────
+# Step 5: Caching
+# Step 6: Security headers (added below — do not create a second file)
+# ─────────────────────────────────────────────────────────────────────────────
+
+[build]
+  publish = "."
+  # No build command — pure static site. Netlify serves files directly.
+
+# ─────────────────────────────────────────────────────────────────────────────
+# SECURITY HEADERS — applied to every response (Step 6 adds values here)
+# ─────────────────────────────────────────────────────────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Security headers are added in Step 6.
+    # Placeholder so the block exists and merges cleanly.
+    X-Content-Type-Options = "nosniff"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CACHING
+# ─────────────────────────────────────────────────────────────────────────────
+
+# HTML pages — always revalidate.
+# Netlify's CDN invalidates its own cache on every atomic deploy;
+# this header governs the *browser* cache only.
+# Visitors always receive the current deployed version on navigation.
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# WebP images — 1-year immutable cache.
+# The browser never re-downloads within that window.
+# To update an image without waiting a year: rename the file
+# (e.g. portfolio-img1-v2.webp) — the new filename busts every cache.
+[[headers]]
+  for = "/images/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# PNG fallback (law-portfolio.png kept alongside its .webp counterpart)
+[[headers]]
+  for = "/images/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 404
+# ─────────────────────────────────────────────────────────────────────────────
+# Netlify automatically uses /404.html for missing pages when the file exists
+# at the root. No explicit redirect rule is needed.

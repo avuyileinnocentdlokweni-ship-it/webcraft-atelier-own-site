@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "WebFetch(domain:majestic-dusk-8a6487.netlify.app)",
+      "Bash(magick --version)",
+      "Bash(cwebp --version)",
+      "Bash(npm install *)",
+      "Bash(node -e \"require\\('sharp'\\); console.log\\('sharp ok'\\)\")",
+      "Bash(node extract-images.mjs)",
+      "Bash(node extract-images2.mjs)",
+      "Bash(node -e ' *)",
+      "Bash(node fix-scripts.mjs)",
+      "Bash(node fix-scripts2.mjs)",
+      "Bash(rm fix-scripts.mjs fix-scripts2.mjs)",
+      "Bash(node fix-animations.mjs)",
+      "Bash(rm fix-animations.mjs)",
+      "Bash(ls -la .gitignore .netlifyignore)",
+      "Bash(du -sh node_modules)"
+    ]
+  }
+}
