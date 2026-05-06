@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Vertex Build Group</title>
+  <meta name="description" content="Six in-house practice areas: ground-up construction, tenant improvement, design-build, retail rollouts, industrial warehouses, and sustainability-led builds." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;1,600&family=Barlow:ital,wght@0,400;0,600;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav__logo" aria-label="Vertex Build Group home">
+      <span class="nav__logo-top">VERTEX</span>
+      <span class="nav__logo-bottom">Build Group</span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="sustainability.html">Sustainability</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav__cta">Start a Project</a>
+    <button class="nav__hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav__overlay">
+    <ul class="nav__overlay-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="sustainability.html">Sustainability</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn btn--blue nav__overlay-cta">Start a Project</a>
+  </div>
+
+  <main>
+
+    <!-- ========================================================
+         PAGE HEADER
+         ======================================================== -->
+    <header class="services-hero">
+      <div class="services-hero__inner">
+        <p class="t-label" style="color:var(--blue); margin-bottom:20px;">What We Do</p>
+        <h1 class="services-hero__h1">What we<br>actually do.</h1>
+        <p class="services-hero__sub">
+          Six practice areas. All in-house. No hand-off.
+        </p>
+      </div>
+    </header>
+
+    <!-- ========================================================
+         SERVICE INDEX — Quick Nav Strip
+         ======================================================== -->
+    <div style="background:var(--steel); padding:0 48px; overflow-x:auto;">
+      <div style="max-width:1280px; margin:0 auto; display:flex; gap:0; white-space:nowrap;">
+        <a href="#ground-up"   style="display:inline-block; padding:18px 24px; font-family:'Inter',sans-serif; font-weight:500; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--light-gray); border-right:1px solid var(--mid-gray); transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--light-gray)'">01 &nbsp;Ground-Up</a>
+        <a href="#tenant-improvement" style="display:inline-block; padding:18px 24px; font-family:'Inter',sans-serif; font-weight:500; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--light-gray); border-right:1px solid var(--mid-gray); transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--light-gray)'">02 &nbsp;Tenant Improvement</a>
+        <a href="#design-build" style="display:inline-block; padding:18px 24px; font-family:'Inter',sans-serif; font-weight:500; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--light-gray); border-right:1px solid var(--mid-gray); transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--light-gray)'">03 &nbsp;Design-Build</a>
+        <a href="#retail"      style="display:inline-block; padding:18px 24px; font-family:'Inter',sans-serif; font-weight:500; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--light-gray); border-right:1px solid var(--mid-gray); transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--light-gray)'">04 &nbsp;Retail Rollouts</a>
+        <a href="#industrial"  style="display:inline-block; padding:18px 24px; font-family:'Inter',sans-serif; font-weight:500; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--light-gray); border-right:1px solid var(--mid-gray); transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--light-gray)'">05 &nbsp;Industrial</a>
+        <a href="#sustainability-led" style="display:inline-block; padding:18px 24px; font-family:'Inter',sans-serif; font-weight:500; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--light-gray); transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--light-gray)'">06 &nbsp;Sustainability</a>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         SERVICE 01 — GROUND-UP COMMERCIAL CONSTRUCTION
+         ======================================================== -->
+    <section class="service-section service-section--light" id="ground-up" aria-labelledby="s1-heading">
+      <div class="service-section__inner">
+
+        <div class="service-section__img">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&h=675&q=80&fit=crop" alt="Ground-up commercial construction site with cranes at dusk" loading="lazy" />
+        </div>
+
+        <div>
+          <p class="service-num" aria-hidden="true">01</p>
+          <p class="service-label t-label" style="color:var(--mid-gray);">Practice Area</p>
+          <h2 class="service-title" id="s1-heading">Ground-Up Commercial Construction</h2>
+          <p class="service-para">
+            We take projects from raw land to certificate of occupancy. Our pre-construction
+            process means no surprises at the permit stage — by the time a shovel breaks ground,
+            every contingency has been mapped, priced, and accounted for. We've delivered
+            everything from 5-story medical office buildings to 500,000&nbsp;sq&nbsp;ft distribution
+            facilities, and we bring the same level of discipline to both.
+          </p>
+          <div class="service-deliverables">
+            <p class="service-deliverables__heading">Key Deliverables</p>
+            <div class="service-deliverables__list">
+              <span>Site analysis &amp; feasibility</span>
+              <span>Permitting &amp; entitlements</span>
+              <span>Foundation through envelope</span>
+              <span>MEP coordination</span>
+              <span>Commissioning &amp; handover</span>
+            </div>
+          </div>
+          <p class="service-industries">
+            <strong>Industries:</strong>&nbsp; Healthcare &nbsp;·&nbsp; Corporate Office &nbsp;·&nbsp; Logistics &nbsp;·&nbsp; Government
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SERVICE 02 — TENANT IMPROVEMENT & FIT-OUTS
+         ======================================================== -->
+    <section class="service-section service-section--dark" id="tenant-improvement" aria-labelledby="s2-heading">
+      <div class="service-section__inner service-section__inner--reversed">
+
+        <div>
+          <p class="service-num" aria-hidden="true">02</p>
+          <p class="service-label t-label">Practice Area</p>
+          <h2 class="service-title" id="s2-heading">Tenant Improvement &amp; Fit-Outs</h2>
+          <p class="service-para">
+            The interior matters as much as the structure. We specialize in high-finish corporate
+            TI work across active multi-tenant buildings, with minimal disruption to neighboring
+            tenants. Our scheduling protocols are built around occupied environments — we know
+            how to get a 40,000&nbsp;sq&nbsp;ft floor plate done without shutting down the elevator
+            bank for three weeks.
+          </p>
+          <div class="service-deliverables">
+            <p class="service-deliverables__heading">Key Deliverables</p>
+            <div class="service-deliverables__list">
+              <span>Existing conditions assessment</span>
+              <span>Space planning &amp; design coordination</span>
+              <span>Phased construction in occupied buildings</span>
+              <span>Custom millwork &amp; high-spec finishes</span>
+              <span>FF&amp;E coordination</span>
+            </div>
+          </div>
+          <p class="service-industries">
+            <strong>Industries:</strong>&nbsp; Financial Services &nbsp;·&nbsp; Law &amp; Professional &nbsp;·&nbsp; Technology &nbsp;·&nbsp; Healthcare
+          </p>
+        </div>
+
+        <div class="service-section__img">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&h=675&q=80&fit=crop" alt="High-finish corporate tenant improvement — open office interior" loading="lazy" />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SERVICE 03 — DESIGN-BUILD DELIVERY
+         ======================================================== -->
+    <section class="service-section service-section--off" id="design-build" aria-labelledby="s3-heading">
+      <div class="service-section__inner">
+
+        <div class="service-section__img">
+          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&h=675&q=80&fit=crop" alt="Design-build team reviewing construction documents and plans" loading="lazy" />
+        </div>
+
+        <div>
+          <p class="service-num" aria-hidden="true">03</p>
+          <p class="service-label t-label" style="color:var(--mid-gray);">Practice Area</p>
+          <h2 class="service-title" id="s3-heading">Design-Build Delivery</h2>
+          <p class="service-para">
+            When schedule compression is the primary constraint, design-build is the right tool.
+            We hold both the design and construction contract, which means the architect's
+            decisions and the superintendent's reality are always in the same room. Clients get
+            a single point of accountability and a process that moves faster because there's no
+            agency boundary to navigate between design and build.
+          </p>
+          <div class="service-deliverables">
+            <p class="service-deliverables__heading">Key Deliverables</p>
+            <div class="service-deliverables__list">
+              <span>Unified design &amp; construction contract</span>
+              <span>Concept through construction documentation</span>
+              <span>Early procurement &amp; long-lead coordination</span>
+              <span>Integrated cost &amp; schedule management</span>
+              <span>Single-source owner accountability</span>
+            </div>
+          </div>
+          <p class="service-industries">
+            <strong>Industries:</strong>&nbsp; Industrial &nbsp;·&nbsp; Retail &nbsp;·&nbsp; Mixed-Use &nbsp;·&nbsp; Municipal
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SERVICE 04 — RETAIL ROLLOUT PROGRAMS
+         ======================================================== -->
+    <section class="service-section service-section--black" id="retail" aria-labelledby="s4-heading">
+      <div class="service-section__inner service-section__inner--reversed">
+
+        <div>
+          <p class="service-num" aria-hidden="true">04</p>
+          <p class="service-label t-label">Practice Area</p>
+          <h2 class="service-title" id="s4-heading">Retail Rollout Programs</h2>
+          <p class="service-para">
+            National brands trust us to execute their store programs at scale without drift in
+            quality or timeline. We've managed concurrent rollouts across 8 markets simultaneously,
+            with consistent scopes, standardized reporting, and a dedicated retail program team
+            that doesn't treat each location like it's the first one they've ever built.
+            Prototypes delivered on time become rollouts delivered on budget.
+          </p>
+          <div class="service-deliverables">
+            <p class="service-deliverables__heading">Key Deliverables</p>
+            <div class="service-deliverables__list">
+              <span>Prototype development &amp; value engineering</span>
+              <span>Multi-site program management</span>
+              <span>Landlord coordination &amp; permit management</span>
+              <span>Fixture &amp; equipment installation</span>
+              <span>Standardized reporting dashboards</span>
+            </div>
+          </div>
+          <p class="service-industries">
+            <strong>Industries:</strong>&nbsp; QSR &amp; Food Service &nbsp;·&nbsp; Apparel &nbsp;·&nbsp; Financial &nbsp;·&nbsp; Specialty Retail
+          </p>
+        </div>
+
+        <div class="service-section__img">
+          <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=900&h=675&q=80&fit=crop" alt="Completed retail fit-out interior — national chain rollout" loading="lazy" />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SERVICE 05 — INDUSTRIAL & WAREHOUSE CONSTRUCTION
+         ======================================================== -->
+    <section class="service-section service-section--light" id="industrial" aria-labelledby="s5-heading">
+      <div class="service-section__inner">
+
+        <div class="service-section__img">
+          <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=900&h=675&q=80&fit=crop" alt="Large-scale industrial warehouse and distribution facility interior" loading="lazy" />
+        </div>
+
+        <div>
+          <p class="service-num" aria-hidden="true">05</p>
+          <p class="service-label t-label" style="color:var(--mid-gray);">Practice Area</p>
+          <h2 class="service-title" id="s5-heading">Industrial &amp; Warehouse Construction</h2>
+          <p class="service-para">
+            Large footprint, fast track, and zero tolerance for delays in a space where
+            tenant operations depend on opening dates. From tilt-up distribution centers to
+            climate-controlled manufacturing facilities, we have the self-perform capacity and
+            the logistics expertise to keep industrial projects moving — even when the
+            supply chain doesn't.
+          </p>
+          <div class="service-deliverables">
+            <p class="service-deliverables__heading">Key Deliverables</p>
+            <div class="service-deliverables__list">
+              <span>Tilt-up &amp; pre-engineered metal buildings</span>
+              <span>Site development &amp; utility coordination</span>
+              <span>Dock &amp; drive-in door systems</span>
+              <span>HVAC, electrical &amp; compressed air systems</span>
+              <span>Racking &amp; material handling coordination</span>
+            </div>
+          </div>
+          <p class="service-industries">
+            <strong>Industries:</strong>&nbsp; E-Commerce &amp; Logistics &nbsp;·&nbsp; Manufacturing &nbsp;·&nbsp; Cold Storage &nbsp;·&nbsp; Government
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SERVICE 06 — SUSTAINABILITY-LED PROJECTS
+         ======================================================== -->
+    <section class="service-section service-section--dark" id="sustainability-led" aria-labelledby="s6-heading">
+      <div class="service-section__inner service-section__inner--reversed">
+
+        <div>
+          <p class="service-num" aria-hidden="true">06</p>
+          <p class="service-label t-label">Practice Area</p>
+          <h2 class="service-title" id="s6-heading">Sustainability-Led Projects</h2>
+          <p class="service-para">
+            We don't treat LEED certification as an add-on you pay extra for. It's baked into
+            how we plan and build. Our sustainability team, led by Angela Tran, is involved from
+            day one of pre-construction — which means green strategies get priced and sequenced
+            correctly instead of value-engineered out at the last minute. 40% of our last three
+            years of project volume has achieved LEED certification. That number is not accidental.
+          </p>
+          <div class="service-deliverables">
+            <p class="service-deliverables__heading">Key Deliverables</p>
+            <div class="service-deliverables__list">
+              <span>LEED documentation &amp; certification management</span>
+              <span>Energy modeling coordination</span>
+              <span>Sustainable material sourcing</span>
+              <span>Waste diversion &amp; recycling programs</span>
+              <span>LEED AP team on every qualifying project</span>
+            </div>
+          </div>
+          <p class="service-industries">
+            <strong>Industries:</strong>&nbsp; Corporate Office &nbsp;·&nbsp; Healthcare &nbsp;·&nbsp; Municipal &nbsp;·&nbsp; Mixed-Use
+          </p>
+        </div>
+
+        <div class="service-section__img">
+          <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=900&h=675&q=80&fit=crop" alt="LEED-certified commercial building with sustainable architecture" loading="lazy" />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         FOOTER CTA
+         ======================================================== -->
+    <section class="footer-cta" aria-labelledby="services-cta-heading">
+      <div class="footer-cta__diagonal" aria-hidden="true"></div>
+      <div class="footer-cta__inner">
+        <h2 class="footer-cta__heading" id="services-cta-heading">
+          Have a project<br>in mind?
+        </h2>
+        <div class="footer-cta__buttons">
+          <a href="contact.html" class="btn btn--blue">Start a Project</a>
+          <a href="projects.html" class="btn btn--outline-white">See Our Work</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div>
+          <div class="footer__brand-logo-top">VERTEX</div>
+          <div class="footer__brand-logo-bottom">Build Group</div>
+        </div>
+        <p class="footer__tagline">
+          Engineering the skyline of tomorrow.<br>
+          Dallas, Texas. Since 2009.
+        </p>
+        <nav class="footer__social" aria-label="Social media links">
+          <a href="#">LinkedIn</a>
+          <a href="#">Instagram</a>
+          <a href="#">ENR Profile</a>
+        </nav>
+      </div>
+      <div class="footer__nav">
+        <p class="footer__col-label">Navigation</p>
+        <nav class="footer__nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="projects.html">Projects</a>
+          <a href="sustainability.html">Sustainability</a>
+          <a href="careers.html">Careers</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="footer__contact">
+        <p class="footer__col-label">Contact</p>
+        <address class="footer__contact-info" style="font-style:normal;">
+          <p>3200 Commerce St, Suite 400<br>Dallas, TX 75226</p>
+          <p><a href="tel:+12145550192" style="color:var(--light-gray);">+1 (214) 555-0192</a></p>
+          <p><a href="mailto:hello@vertexbuildgroup.com" style="color:var(--light-gray);">hello@vertexbuildgroup.com</a></p>
+        </address>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2024 Vertex Build Group. Dallas, TX. &nbsp;|&nbsp; ENR Top 400 Contractor</p>
+      <p style="color:var(--steel);">Licensed · Bonded · Insured</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Harven &amp; Sons Construction — custom homes, renovations, decks, and historic restorations across Western North Carolina.">
+  <title>Portfolio | Harven &amp; Sons Construction</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .portfolio-item[data-hidden="true"] { display: none; }
+  </style>
+</head>
+<body>
+
+  <div id="nav-target"></div>
+
+  <!-- ═══ PAGE HERO ═══ -->
+  <section class="page-hero">
+    <div class="hero-bg" style="background-color:var(--green); background-image:url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1600&q=80');"></div>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span>Portfolio</span>
+        </div>
+        <h1>Our Work</h1>
+        <p>Over 400 homes built and renovated across Western North Carolina since 1987.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PORTFOLIO GRID ═══ -->
+  <section class="section-pad bg-cream">
+    <div class="container">
+
+      <!-- Filter bar -->
+      <div class="filter-bar fade-up">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="custom-home">Custom Homes</button>
+        <button class="filter-btn" data-filter="renovation">Renovations</button>
+        <button class="filter-btn" data-filter="addition">Room Additions</button>
+        <button class="filter-btn" data-filter="outdoor">Outdoor &amp; Decks</button>
+        <button class="filter-btn" data-filter="historic">Historic Restoration</button>
+      </div>
+
+      <div class="portfolio-grid" id="portfolio-grid">
+
+        <!-- 1 -->
+        <div class="portfolio-item fade-up" data-category="custom-home">
+          <div class="portfolio-img" style="background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=80');">
+            <div class="portfolio-img-overlay">
+              <span class="card-badge">Custom Home</span>
+              <div class="portfolio-item-title">The Morrow Residence</div>
+              <div class="portfolio-item-loc">Weaverville, NC &bull; 2023</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="portfolio-item fade-up" data-category="renovation" style="transition-delay:.05s">
+          <div class="portfolio-img" style="background-image:url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&q=80');">
+            <div class="portfolio-img-overlay">
+              <span class="card-badge">Kitchen Renovation</span>
+              <div class="portfolio-item-title">Lakefront Kitchen Overhaul</div>
+              <div class="portfolio-item-loc">Lake Lure, NC &bull; 2023</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="portfolio-item fade-up" data-category="outdoor" style="transition-delay:.1s">
+          <div class="portfolio-img" style="background-image:url('https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=700&q=80');">
+            <div class="portfolio-img-overlay">
+              <span class="card-badge">Outdoor Structure</span>
+              <div class="portfolio-item-title">Wraparound Porch &amp; Deck</div>
+              <div class="portfolio-item-loc">Hendersonville, NC &bull; 2022</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="portfolio-item fade-up" data-category="historic" style="transition-delay:.15s">
+          <div class="portfolio-img" style="background-image:url('https://images.unsplash.com/photo-1520333789090-1afc82db536a?w=700&q=80');">
+            <div class="portfolio-img-overlay">
+              <span class="card-badge">Historic Restoration</span>
+              <div class="portfolio-item-title">Flat Rock Farmhouse</div>
+              <div class="portfolio-item-loc">Flat Rock, NC &bull; 2022</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="portfolio-item fade-up" data-category="custom-home" style="transition-delay:.2s">
+          <div class="portfolio-img" style="background-image:url('https://images.unsplash.com/photo-1613977257363-707ba9a6ca80?w=700&q=80');">
+            <div class="portfolio-img-overlay">
+              <span class="card-badge">Custom Home</span>
+              <div class="portfolio-item-title">The Caldwell Mountain Lodge</div>
+              <div class="portfolio-item-loc">Black Mountain, NC &bull; 2021</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="portfolio-item fade-up" data-category="addition" style="transition-delay:.25s">
+          <div class="portfolio-img" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80');">
+            <div class="portfolio-img-overlay">
+              <span class="card-badge">Room Addition</span>
+              <div class="portfolio-item-title">In-Law Suite — Brookside Dr.</div>
+              <div class="portfolio-item-loc">Asheville, NC &bull; 2021</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="portfolio-item fade-up" data-category="renovation" style="transition-delay:.3s">
+          <div class="portfolio-img" style="background-image:url('https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=700&q=80');">
+            <div class="portfolio-img-overlay">
+              <span class="card-badge">Bathroom Renovation</span>
+              <div class="portfolio-item-title">Primary Bath — Mills River</div>
+              <div class="portfolio-item-loc">Mills River, NC &bull; 2020</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="portfolio-item fade-up" data-category="outdoor" style="transition-delay:.35s">
+          <div class="portfolio-img" style="background-image:url('https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=700&q=80');">
+            <div class="portfolio-img-overlay">
+              <span class="card-badge">Outdoor Structure</span>
+              <div class="portfolio-item-title">Ridgeline Pergola &amp; Firepit</div>
+              <div class="portfolio-item-loc">Brevard, NC &bull; 2020</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="portfolio-item fade-up" data-category="custom-home" style="transition-delay:.4s">
+          <div class="portfolio-img" style="background-image:url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=700&q=80');">
+            <div class="portfolio-img-overlay">
+              <span class="card-badge">Custom Home</span>
+              <div class="portfolio-item-title">The Fletcher Retreat</div>
+              <div class="portfolio-item-loc">Fletcher, NC &bull; 2019</div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /portfolio-grid -->
+    </div>
+  </section>
+
+  <!-- ═══ PROCESS SECTION ═══ -->
+  <section class="section-pad" style="background:var(--cream-dark);">
+    <div class="container">
+      <div class="section-header center fade-up">
+        <div class="label">How It Works</div>
+        <h2>Our Build Process</h2>
+        <div class="divider divider-center"></div>
+        <p>We keep you informed at every stage — no surprises, no guesswork.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; margin-top:1rem;">
+
+        <div class="fade-up" style="text-align:center; padding:1.5rem 1rem;">
+          <div style="width:56px;height:56px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--white);">1</div>
+          <h3 style="font-size:1rem; margin-bottom:.4rem;">Consultation</h3>
+          <p style="font-size:.875rem;">We meet, listen, and learn what you're building toward — no sales pitch, just conversation.</p>
+        </div>
+
+        <div class="fade-up" style="text-align:center; padding:1.5rem 1rem; transition-delay:.1s">
+          <div style="width:56px;height:56px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--white);">2</div>
+          <h3 style="font-size:1rem; margin-bottom:.4rem;">Estimate &amp; Plan</h3>
+          <p style="font-size:.875rem;">Detailed written estimate, timeline, and scope. You know exactly what you're getting before we break ground.</p>
+        </div>
+
+        <div class="fade-up" style="text-align:center; padding:1.5rem 1rem; transition-delay:.2s">
+          <div style="width:56px;height:56px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--white);">3</div>
+          <h3 style="font-size:1rem; margin-bottom:.4rem;">Build</h3>
+          <p style="font-size:.875rem;">Our crew gets to work. Regular updates, site access for you, and Robert Jr. on-site every day.</p>
+        </div>
+
+        <div class="fade-up" style="text-align:center; padding:1.5rem 1rem; transition-delay:.3s">
+          <div style="width:56px;height:56px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--white);">4</div>
+          <h3 style="font-size:1rem; margin-bottom:.4rem;">Walkthrough</h3>
+          <p style="font-size:.875rem;">We walk through every inch together. Nothing is closed out until you're genuinely satisfied.</p>
+        </div>
+
+      </div>
+      <style>
+        @media(max-width:680px){
+          div[style*="grid-template-columns:repeat(4"]{grid-template-columns:1fr 1fr !important;}
+        }
+        @media(max-width:420px){
+          div[style*="grid-template-columns:repeat(4"]{grid-template-columns:1fr !important;}
+        }
+      </style>
+    </div>
+  </section>
+
+  <!-- ═══ CTA ═══ -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Let's add your project to the portfolio.</h2>
+      <p>Every home on this page started with a single conversation. Yours can too.</p>
+      <a href="contact.html" class="btn btn-primary">Get a Quote</a>
+    </div>
+  </section>
+
+  <div id="footer-target"></div>
+
+  <script src="components.js"></script>
+  <script>
+    // Portfolio filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('.portfolio-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+        items.forEach(item => {
+          const match = filter === 'all' || item.dataset.category === filter;
+          item.setAttribute('data-hidden', match ? 'false' : 'true');
+          item.style.display = match ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

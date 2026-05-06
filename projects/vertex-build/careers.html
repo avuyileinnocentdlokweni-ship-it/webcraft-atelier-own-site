@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Careers — Vertex Build Group</title>
+  <meta name="description" content="Join a team of 320 people who take commercial construction seriously. Open roles in project management, field supervision, sustainability, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;1,600&family=Barlow:ital,wght@0,400;0,600;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .culture-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+    }
+    .culture-block {
+      padding: 72px 56px;
+      position: relative;
+    }
+    .culture-block--dark { background: var(--charcoal); }
+    .culture-block--darker { background: var(--black); }
+    .culture-block--light { background: var(--off-white); }
+    .culture-block--white { background: var(--white); }
+    .culture-block__num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 80px;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: var(--blue);
+      opacity: 0.2;
+      position: absolute;
+      top: 24px; right: 32px;
+      pointer-events: none;
+    }
+    .culture-block__heading {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 600;
+      font-size: clamp(20px, 2.2vw, 26px);
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+    .culture-block--dark .culture-block__heading,
+    .culture-block--darker .culture-block__heading { color: var(--white); }
+    .culture-block--light .culture-block__heading,
+    .culture-block--white .culture-block__heading { color: var(--black); }
+    .culture-block__body {
+      font-size: 14px;
+      line-height: 1.75;
+    }
+    .culture-block--dark .culture-block__body,
+    .culture-block--darker .culture-block__body { color: var(--light-gray); }
+    .culture-block--light .culture-block__body,
+    .culture-block--white .culture-block__body { color: var(--mid-gray); }
+
+    .openings {
+      background: var(--white);
+      padding: 100px 48px;
+    }
+    .openings__inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .openings__header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 48px;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .openings__heading {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: clamp(36px, 5vw, 56px);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      color: var(--black);
+    }
+    .opening-row {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      align-items: center;
+      gap: 24px 48px;
+      padding: 28px 0;
+      border-top: 1px solid var(--light-gray);
+      transition: background 0.15s;
+    }
+    .opening-row:last-of-type { border-bottom: 1px solid var(--light-gray); }
+    .opening-row:hover { background: var(--off-white); margin: 0 -24px; padding-left: 24px; padding-right: 24px; }
+    .opening-row__title {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 600;
+      font-size: clamp(16px, 2vw, 20px);
+      color: var(--black);
+    }
+    .opening-row__dept {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: var(--mid-gray);
+      margin-top: 4px;
+      letter-spacing: 0.04em;
+    }
+    .opening-row__location {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+      white-space: nowrap;
+    }
+    .opening-row__apply {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: gap 0.2s;
+    }
+    .opening-row__apply:hover { gap: 14px; }
+
+    .perks {
+      background: var(--off-white);
+      padding: 100px 48px;
+    }
+    .perks__inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .perks__label {
+      color: var(--mid-gray);
+      margin-bottom: 48px;
+    }
+    .perks__heading {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: clamp(36px, 4.5vw, 52px);
+      letter-spacing: -0.02em;
+      color: var(--black);
+      margin-bottom: 56px;
+      max-width: 600px;
+      line-height: 1;
+    }
+    .perks-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+    .perk {
+      padding: 32px 32px 32px 0;
+      border-top: 2px solid var(--light-gray);
+    }
+    .perk + .perk { border-left: 1px solid var(--light-gray); padding-left: 32px; }
+    .perk:nth-child(n+4) { border-top-color: var(--light-gray); }
+    .perk__title {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--black);
+      margin-bottom: 8px;
+    }
+    .perk__body {
+      font-size: 13px;
+      color: var(--mid-gray);
+      line-height: 1.65;
+    }
+
+    @media (max-width: 900px) {
+      .culture-grid { grid-template-columns: 1fr; }
+      .culture-block { padding: 56px 32px; }
+      .openings { padding: 64px 24px; }
+      .perks { padding: 64px 24px; }
+      .perks-list { grid-template-columns: 1fr 1fr; }
+      .perk:nth-child(2n+1) + .perk:nth-child(2n) { border-left: 1px solid var(--light-gray); }
+    }
+    @media (max-width: 600px) {
+      .perks-list { grid-template-columns: 1fr; }
+      .perk + .perk { border-left: none; padding-left: 0; }
+      .opening-row { grid-template-columns: 1fr auto; }
+      .opening-row__location { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav__logo" aria-label="Vertex Build Group home">
+      <span class="nav__logo-top">VERTEX</span>
+      <span class="nav__logo-bottom">Build Group</span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="sustainability.html">Sustainability</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav__cta">Start a Project</a>
+    <button class="nav__hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav__overlay">
+    <ul class="nav__overlay-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="sustainability.html">Sustainability</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn btn--blue nav__overlay-cta">Start a Project</a>
+  </div>
+
+  <main>
+
+    <!-- HERO -->
+    <header style="background:var(--black); padding:160px 48px 80px;">
+      <div style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:flex-end;">
+        <div>
+          <p class="t-label" style="color:var(--blue); margin-bottom:20px;">Careers at Vertex</p>
+          <h1 style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:clamp(56px,8vw,96px); letter-spacing:-0.025em; line-height:0.92; color:var(--white); margin-bottom:28px;">
+            Build things<br>that matter.<br>With people<br>who care.
+          </h1>
+        </div>
+        <div>
+          <p style="font-size:16px; color:var(--light-gray); line-height:1.75; margin-bottom:24px;">
+            Vertex is a place where project managers run real projects — not admin queues.
+            Where field supervisors have authority to make decisions. And where your work
+            is on the skyline, not a slide deck.
+          </p>
+          <p style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:48px; letter-spacing:-0.02em; color:var(--blue); line-height:1; margin-bottom:8px;">320</p>
+          <p class="t-label" style="color:var(--mid-gray);">Team members across 14 states</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- CULTURE GRID -->
+    <section class="culture-grid" aria-label="Company culture">
+      <div class="culture-block culture-block--dark">
+        <span class="culture-block__num" aria-hidden="true">01</span>
+        <h2 class="culture-block__heading">We hire for craft, not just credentials.</h2>
+        <p class="culture-block__body">
+          A PM license matters. But so does the instinct to walk a site before you pick
+          up the phone. We look for people who are curious about how things actually work —
+          not just how to document that they worked.
+        </p>
+      </div>
+      <div class="culture-block culture-block--light">
+        <span class="culture-block__num" aria-hidden="true">02</span>
+        <h2 class="culture-block__heading">Real projects. Real accountability.</h2>
+        <p class="culture-block__body">
+          Every project manager at Vertex owns their project. That means the schedule,
+          the owner relationship, and the punchlist. We don't layer five levels of management
+          between a PM and a decision. You'll have support, but you'll also have authority.
+        </p>
+      </div>
+      <div class="culture-block culture-block--white">
+        <span class="culture-block__num" aria-hidden="true">03</span>
+        <h2 class="culture-block__heading">We promote internally. Consistently.</h2>
+        <p class="culture-block__body">
+          Derek Fontaine started as a field engineer. Angela Tran joined as a junior
+          sustainability coordinator. The path upward at Vertex is real — and it's faster
+          than it looks from the outside.
+        </p>
+      </div>
+      <div class="culture-block culture-block--darker">
+        <span class="culture-block__num" aria-hidden="true">04</span>
+        <h2 class="culture-block__heading">Safety isn't a poster on the wall.</h2>
+        <p class="culture-block__body">
+          Zero lost-time incidents in 2023 didn't happen by accident. Josh Merritt's safety
+          program is rigorous, practical, and taken seriously by everyone from the C-suite
+          to the newest field hire. OSHA VPP Star doesn't come from paperwork — it comes
+          from culture.
+        </p>
+      </div>
+    </section>
+
+    <!-- OPEN ROLES -->
+    <section class="openings" aria-labelledby="openings-heading">
+      <div class="openings__inner">
+        <div class="openings__header">
+          <h2 class="openings__heading" id="openings-heading">Open roles.</h2>
+          <p class="t-label" style="color:var(--mid-gray);">Updated April 2024</p>
+        </div>
+
+        <a href="contact.html" class="opening-row" style="text-decoration:none;">
+          <div>
+            <p class="opening-row__title">Senior Project Manager — Ground-Up</p>
+            <p class="opening-row__dept">Project Management &nbsp;·&nbsp; Full-Time</p>
+          </div>
+          <p class="opening-row__location">Dallas, TX</p>
+          <p class="opening-row__apply">Apply &rarr;</p>
+        </a>
+        <a href="contact.html" class="opening-row" style="text-decoration:none;">
+          <div>
+            <p class="opening-row__title">Field Superintendent — Industrial</p>
+            <p class="opening-row__dept">Field Operations &nbsp;·&nbsp; Full-Time</p>
+          </div>
+          <p class="opening-row__location">Fort Worth, TX</p>
+          <p class="opening-row__apply">Apply &rarr;</p>
+        </a>
+        <a href="contact.html" class="opening-row" style="text-decoration:none;">
+          <div>
+            <p class="opening-row__title">Sustainability Coordinator</p>
+            <p class="opening-row__dept">Sustainability &nbsp;·&nbsp; Full-Time</p>
+          </div>
+          <p class="opening-row__location">Dallas, TX</p>
+          <p class="opening-row__apply">Apply &rarr;</p>
+        </a>
+        <a href="contact.html" class="opening-row" style="text-decoration:none;">
+          <div>
+            <p class="opening-row__title">Preconstruction Estimator</p>
+            <p class="opening-row__dept">Preconstruction &nbsp;·&nbsp; Full-Time</p>
+          </div>
+          <p class="opening-row__location">Dallas, TX</p>
+          <p class="opening-row__apply">Apply &rarr;</p>
+        </a>
+        <a href="contact.html" class="opening-row" style="text-decoration:none;">
+          <div>
+            <p class="opening-row__title">Project Engineer — Retail Programs</p>
+            <p class="opening-row__dept">Project Management &nbsp;·&nbsp; Full-Time</p>
+          </div>
+          <p class="opening-row__location">Houston, TX</p>
+          <p class="opening-row__apply">Apply &rarr;</p>
+        </a>
+        <a href="contact.html" class="opening-row" style="text-decoration:none;">
+          <div>
+            <p class="opening-row__title">MEP Coordinator</p>
+            <p class="opening-row__dept">Engineering &nbsp;·&nbsp; Full-Time</p>
+          </div>
+          <p class="opening-row__location">Austin, TX</p>
+          <p class="opening-row__apply">Apply &rarr;</p>
+        </a>
+
+        <div style="margin-top:48px; padding:32px; background:var(--off-white); border-left:3px solid var(--blue);">
+          <p style="font-family:'Barlow',sans-serif; font-weight:600; font-size:16px; color:var(--black); margin-bottom:8px;">Don't see your role listed?</p>
+          <p style="font-size:14px; color:var(--mid-gray); line-height:1.6; margin-bottom:16px;">We're always interested in talking to great people. Send us your resume and a note about what you're looking for.</p>
+          <a href="contact.html" class="btn btn--outline-dark" style="font-size:11px; padding:10px 20px;">Send a General Application</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PERKS & BENEFITS -->
+    <section class="perks" aria-labelledby="perks-heading">
+      <div class="perks__inner">
+        <p class="perks__label t-label">Benefits</p>
+        <h2 class="perks__heading" id="perks-heading">
+          What we actually<br>offer.
+        </h2>
+        <div class="perks-list">
+          <div class="perk">
+            <p class="perk__title">Competitive Compensation</p>
+            <p class="perk__body">Salaries benchmarked annually against ENR and local market data. Plus performance bonuses tied to project outcomes — not just hours logged.</p>
+          </div>
+          <div class="perk">
+            <p class="perk__title">Full Medical, Dental &amp; Vision</p>
+            <p class="perk__body">100% employer-paid premiums for employees. Competitive dependent coverage. No waiting period after 30 days.</p>
+          </div>
+          <div class="perk">
+            <p class="perk__title">401(k) with 4% Match</p>
+            <p class="perk__body">Vested immediately. We match 4% of your salary, dollar for dollar. You shouldn't have to wait two years for your retirement match to belong to you.</p>
+          </div>
+          <div class="perk">
+            <p class="perk__title">Training &amp; Certification Support</p>
+            <p class="perk__body">Full reimbursement for OSHA, LEED AP, PMP, and other industry certifications. Study time is treated as professional development, not personal time.</p>
+          </div>
+          <div class="perk">
+            <p class="perk__title">Generous PTO</p>
+            <p class="perk__body">20 days from day one, plus 10 company holidays. We expect you to actually use it. Project managers who are burnt out don't run good projects.</p>
+          </div>
+          <div class="perk">
+            <p class="perk__title">Relocation Assistance</p>
+            <p class="perk__body">For select roles requiring relocation to Dallas, Austin, or Houston, we provide a structured relocation package. Details discussed at offer stage.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER CTA -->
+    <section class="footer-cta" aria-labelledby="careers-cta-heading">
+      <div class="footer-cta__diagonal" aria-hidden="true"></div>
+      <div class="footer-cta__inner">
+        <h2 class="footer-cta__heading" id="careers-cta-heading">
+          Ready to build<br>with us?
+        </h2>
+        <div class="footer-cta__buttons">
+          <a href="contact.html" class="btn btn--blue">Send Your Resume</a>
+          <a href="about.html" class="btn btn--outline-white">Meet the Team</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div>
+          <div class="footer__brand-logo-top">VERTEX</div>
+          <div class="footer__brand-logo-bottom">Build Group</div>
+        </div>
+        <p class="footer__tagline">Engineering the skyline of tomorrow.<br>Dallas, Texas. Since 2009.</p>
+        <nav class="footer__social" aria-label="Social media">
+          <a href="#">LinkedIn</a>
+          <a href="#">Instagram</a>
+          <a href="#">ENR Profile</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer__col-label">Navigation</p>
+        <nav class="footer__nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="projects.html">Projects</a>
+          <a href="sustainability.html">Sustainability</a>
+          <a href="careers.html">Careers</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer__col-label">Contact</p>
+        <address class="footer__contact-info" style="font-style:normal;">
+          <p>3200 Commerce St, Suite 400<br>Dallas, TX 75226</p>
+          <p><a href="tel:+12145550192" style="color:var(--light-gray);">+1 (214) 555-0192</a></p>
+          <p><a href="mailto:hello@vertexbuildgroup.com" style="color:var(--light-gray);">hello@vertexbuildgroup.com</a></p>
+        </address>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2024 Vertex Build Group. Dallas, TX. &nbsp;|&nbsp; ENR Top 400 Contractor</p>
+      <p style="color:var(--steel);">Licensed · Bonded · Insured</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
