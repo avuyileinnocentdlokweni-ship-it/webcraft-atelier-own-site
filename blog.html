@@ -152,7 +152,9 @@ img{max-width:100%;height:auto}
 .post-card:hover{border-color:rgba(196,154,60,0.5);box-shadow:0 16px 40px rgba(196,154,60,0.1);transform:translateY(-4px)}
 .post-card:hover::before{transform:scaleX(1)}
 .post-card.coming-soon{opacity:0.65;pointer-events:none}
-.card-thumb{aspect-ratio:16/9;background:linear-gradient(135deg,#c8c4bc 0%,#d4cfc8 100%);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.card-thumb{aspect-ratio:16/9;background:linear-gradient(135deg,#c8c4bc 0%,#d4cfc8 100%);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.thumb-logo-badge{position:absolute;bottom:12px;right:14px;height:18px;width:auto;opacity:.9}
+.featured-thumb .thumb-logo-badge{height:22px;bottom:16px;right:18px}
 .card-thumb-art{font-family:var(--font-display);font-size:2.5rem;color:rgba(42,42,42,0.12);font-style:italic}
 .card-body{padding:24px}
 .card-meta{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
@@ -215,7 +217,12 @@ img{max-width:100%;height:auto}
   <div class="blog-featured-inner">
     <div class="featured-thumb reveal-left">
       <span class="featured-badge">Featured</span>
-      <span class="featured-thumb-art">W</span>
+      <svg class="featured-thumb-art" width="84" height="84" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M28 8H12a4 4 0 0 0-4 4v16l24 24a4 4 0 0 0 5.66 0l18.34-18.34a4 4 0 0 0 0-5.66L32 8h-4z" stroke="rgba(196,154,60,.4)" stroke-width="2" stroke-linejoin="round"/>
+        <circle cx="18" cy="18" r="3.5" stroke="rgba(196,154,60,.4)" stroke-width="2"/>
+        <path d="M24 38l16-16" stroke="rgba(196,154,60,.4)" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <img class="thumb-logo-badge" src="images/logo-badge-dark.png" alt="" aria-hidden="true">
     </div>
     <div class="reveal-right">
       <div class="featured-meta">
@@ -248,7 +255,12 @@ img{max-width:100%;height:auto}
       <!-- Card 1 — linked -->
       <a href="blog/website-cost-south-africa-2026.html" class="post-card reveal" data-category="pricing" aria-label="Read: How Much Does a Website Cost in South Africa in 2026?">
         <div class="card-thumb" aria-hidden="true">
-          <span class="card-thumb-art">W</span>
+          <svg width="56" height="56" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M28 8H12a4 4 0 0 0-4 4v16l24 24a4 4 0 0 0 5.66 0l18.34-18.34a4 4 0 0 0 0-5.66L32 8h-4z" stroke="rgba(42,42,42,.22)" stroke-width="2" stroke-linejoin="round"/>
+            <circle cx="18" cy="18" r="3.5" stroke="rgba(42,42,42,.22)" stroke-width="2"/>
+            <path d="M24 38l16-16" stroke="rgba(42,42,42,.22)" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <img class="thumb-logo-badge" src="images/logo-badge-light.png" alt="" aria-hidden="true">
         </div>
         <div class="card-body">
           <div class="card-meta">
@@ -264,7 +276,17 @@ img{max-width:100%;height:auto}
       <!-- Card 2 — coming soon -->
       <div class="post-card coming-soon reveal d1" data-category="web-design" aria-hidden="true">
         <div class="card-thumb">
-          <span class="card-thumb-art">W</span>
+          <svg width="56" height="56" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="8" y="14" width="48" height="36" rx="3" stroke="rgba(42,42,42,.22)" stroke-width="2"/>
+            <line x1="8" y1="22" x2="56" y2="22" stroke="rgba(42,42,42,.22)" stroke-width="2"/>
+            <circle cx="14" cy="18" r="1.6" fill="rgba(42,42,42,.3)"/>
+            <circle cx="19" cy="18" r="1.6" fill="rgba(42,42,42,.3)"/>
+            <circle cx="24" cy="18" r="1.6" fill="rgba(42,42,42,.3)"/>
+            <line x1="16" y1="30" x2="48" y2="30" stroke="rgba(42,42,42,.22)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="16" y1="37" x2="40" y2="37" stroke="rgba(42,42,42,.22)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="16" y1="44" x2="32" y2="44" stroke="rgba(42,42,42,.22)" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <img class="thumb-logo-badge" src="images/logo-badge-light.png" alt="" aria-hidden="true">
         </div>
         <div class="card-body">
           <div class="card-meta">
@@ -279,7 +301,11 @@ img{max-width:100%;height:auto}
       <!-- Card 3 — coming soon -->
       <div class="post-card coming-soon reveal d2" data-category="tips" aria-hidden="true">
         <div class="card-thumb">
-          <span class="card-thumb-art">W</span>
+          <svg width="56" height="56" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M10 18l14 8-4 10 20 14" stroke="rgba(42,42,42,.22)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M32 48h8v-8" stroke="rgba(42,42,42,.22)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <img class="thumb-logo-badge" src="images/logo-badge-light.png" alt="" aria-hidden="true">
         </div>
         <div class="card-body">
           <div class="card-meta">
