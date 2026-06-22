@@ -304,23 +304,48 @@ html{scroll-behavior:auto}
 
   <div class="portfolio-grid">
 
-    <!-- Card 1: Law (Figma Design) -->
-    <div class="project-card reveal d1" onclick="openModal(4)">
+    <!-- Card 0: Silver Coring (Live Site) -->
+    <div class="project-card reveal d1">
       <div class="card-thumb">
-        <img src="images/law-portfolio.png" width="302" height="184" alt="Vincent Law — Boston Divorce Attorney UI/UX Design">
+        <div class="iframe-wrapper">
+          <iframe
+            src="https://phenomenal-narwhal-3a15b9.netlify.app/"
+            title="Silver Coring preview"
+            loading="lazy"
+            scrolling="no"
+            tabindex="-1"
+            aria-hidden="true"
+          ></iframe>
+        </div>
+        <div class="card-overlay">
+          <span class="card-tag live-tag">Live Site &middot; Construction</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-number"><span class="card-tag live-tag">Live Site &middot; Construction</span></p>
+        <h3 class="card-title">Silver Coring</h3>
+        <p class="card-desc">Cape Town core drilling, plumbing and demolition specialist. Dark navy and gold brand identity built to read as established, capable and built to last.</p>
+        <a class="card-open-btn" href="https://phenomenal-narwhal-3a15b9.netlify.app/" target="_blank" rel="noopener">View Live Site &nearr;</a>
+      </div>
+    </div>
+
+    <!-- Card: TM Signature -->
+    <div class="project-card reveal d2" onclick="openModal(1)">
+      <div class="card-thumb">
+        <img src="images/portfolio-img7.webp" loading="lazy" width="420" height="1568" alt="TM Signature">
         <div class="card-thumb-overlay"></div>
         <button class="card-view-btn">View Project</button>
       </div>
       <div class="card-body">
-        <p class="card-number"><span class="card-tag design-tag">UI/UX Design &middot; Figma</span></p>
-        <h3 class="card-title">Vincent Law</h3>
-        <p class="card-desc">Split-screen attorney landing page with elegant serif typography and a conversion-focused layout — designed for a Boston divorce attorney.</p>
+        <p class="card-number"><span class="card-tag">UI/UX Design</span></p>
+        <h3 class="card-title">TM Signature</h3>
+        <p class="card-desc">A beauty business website designed for a makeup artist, capturing elegance and professional flair.</p>
         <button class="card-open-btn">Open Project &#x2197;</button>
       </div>
     </div>
 
     <!-- Card 2: Clearstone (Live Site) -->
-    <div class="project-card reveal d2">
+    <div class="project-card reveal d3">
       <div class="card-thumb">
         <div class="iframe-wrapper">
           <iframe
@@ -341,21 +366,6 @@ html{scroll-behavior:auto}
         <h3 class="card-title">Clearstone Developments</h3>
         <p class="card-desc">Luxury residential and boutique commercial developer. Refined editorial design with a dark, gallery-quality aesthetic built around the Clearstone brand.</p>
         <a class="card-open-btn" href="https://harmonious-lokum-3932f5.netlify.app/" target="_blank" rel="noopener">View Live Site &nearr;</a>
-      </div>
-    </div>
-
-    <!-- Card 3: SANA Steel Fixer (Figma Design) -->
-    <div class="project-card reveal d3" onclick="openModal(5)">
-      <div class="card-thumb">
-        <img src="images/portfolio-img9.webp" loading="lazy" width="1204" height="1008" alt="SANA Steel Fixer — Construction UI/UX Design">
-        <div class="card-thumb-overlay"></div>
-        <button class="card-view-btn">View Project</button>
-      </div>
-      <div class="card-body">
-        <p class="card-number"><span class="card-tag design-tag">UI/UX Design &middot; Figma</span></p>
-        <h3 class="card-title">Sana Steel Fixer</h3>
-        <p class="card-desc">Premium construction company multi-page concept — covering services, projects, about and contact. Structured, trustworthy and built to convey strength.</p>
-        <button class="card-open-btn">Open Project &#x2197;</button>
       </div>
     </div>
 
@@ -434,6 +444,21 @@ html{scroll-behavior:auto}
       </div>
     </div>
 
+    <!-- Card 3: SANA Steel Fixer (Figma Design) -->
+    <div class="project-card reveal" onclick="openModal(5)">
+      <div class="card-thumb">
+        <img src="images/portfolio-img9.webp" loading="lazy" width="1204" height="1008" alt="SANA Steel Fixer — Construction UI/UX Design">
+        <div class="card-thumb-overlay"></div>
+        <button class="card-view-btn">View Project</button>
+      </div>
+      <div class="card-body">
+        <p class="card-number"><span class="card-tag design-tag">UI/UX Design &middot; Figma</span></p>
+        <h3 class="card-title">Sana Steel Fixer</h3>
+        <p class="card-desc">Premium construction company multi-page concept — covering services, projects, about and contact. Structured, trustworthy and built to convey strength.</p>
+        <button class="card-open-btn">Open Project &#x2197;</button>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -454,6 +479,21 @@ html{scroll-behavior:auto}
 
   <div class="portfolio-grid">
 
+    <!-- Card 1: Law (Figma Design) -->
+    <div class="project-card reveal d1" onclick="openModal(4)">
+      <div class="card-thumb">
+        <img src="images/law-portfolio.png" width="302" height="184" alt="Vincent Law — Boston Divorce Attorney UI/UX Design">
+        <div class="card-thumb-overlay"></div>
+        <button class="card-view-btn">View Project</button>
+      </div>
+      <div class="card-body">
+        <p class="card-number"><span class="card-tag design-tag">UI/UX Design &middot; Figma</span></p>
+        <h3 class="card-title">Vincent Law</h3>
+        <p class="card-desc">Split-screen attorney landing page with elegant serif typography and a conversion-focused layout — designed for a Boston divorce attorney.</p>
+        <button class="card-open-btn">Open Project &#x2197;</button>
+      </div>
+    </div>
+
     <!-- Card: My Landing Page -->
     <div class="project-card reveal d2" onclick="openModal(0)">
       <div class="card-thumb">
@@ -469,23 +509,8 @@ html{scroll-behavior:auto}
       </div>
     </div>
 
-    <!-- Card: TM Signature -->
-    <div class="project-card reveal d3" onclick="openModal(1)">
-      <div class="card-thumb">
-        <img src="images/portfolio-img7.webp" loading="lazy" width="420" height="1568" alt="TM Signature">
-        <div class="card-thumb-overlay"></div>
-        <button class="card-view-btn">View Project</button>
-      </div>
-      <div class="card-body">
-        <p class="card-number"><span class="card-tag">UI/UX Design</span></p>
-        <h3 class="card-title">TM Signature</h3>
-        <p class="card-desc">A beauty business website designed for a makeup artist, capturing elegance and professional flair.</p>
-        <button class="card-open-btn">Open Project &#x2197;</button>
-      </div>
-    </div>
-
     <!-- Card: Styled by Atee -->
-    <div class="project-card reveal d4" onclick="openModal(2)">
+    <div class="project-card reveal d3" onclick="openModal(2)">
       <div class="card-thumb">
         <img src="images/portfolio-img6.webp" loading="lazy" width="1316" height="924" alt="Styled by Atee">
         <div class="card-thumb-overlay"></div>
@@ -500,7 +525,7 @@ html{scroll-behavior:auto}
     </div>
 
     <!-- Card: Camdon Pillay -->
-    <div class="project-card reveal d5" onclick="openModal(3)">
+    <div class="project-card reveal d4" onclick="openModal(3)">
       <div class="card-thumb">
         <img src="images/portfolio-img5.webp" loading="lazy" width="476" height="1568" alt="Camdon Pillay Guitar Lessons">
         <div class="card-thumb-overlay"></div>
