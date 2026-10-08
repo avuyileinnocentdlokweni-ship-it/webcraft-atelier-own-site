@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="description" content="Honest website pricing breakdown for South African small businesses in 2026. From R2,000 starter sites to custom builds: what to pay, what to avoid, and what should always be included.">
+<meta name="description" content="Honest website pricing breakdown for South African small businesses in 2026. From R2,500 one-page websites to custom builds: what to pay, what to avoid, and what should always be included.">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0d1f2d">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How Much Does a Website Cost in South Africa in 2026? | WebCraft Atelier">
-<meta property="og:description" content="Honest website pricing breakdown for South African small businesses in 2026. From R2,000 starter sites to custom builds: what to pay, what to avoid, and what should always be included.">
+<meta property="og:description" content="Honest website pricing breakdown for South African small businesses in 2026. From R2,500 one-page websites to custom builds: what to pay, what to avoid, and what should always be included.">
 <meta property="og:url" content="https://www.webcraftatelier.co.za/blog/website-cost-south-africa-2026.html">
 <meta property="og:site_name" content="WebCraft Atelier">
 <meta property="og:locale" content="en_ZA">
 <meta property="og:image" content="https://www.webcraftatelier.co.za/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="How Much Does a Website Cost in South Africa in 2026? | WebCraft Atelier">
-<meta name="twitter:description" content="Honest website pricing breakdown for South African small businesses in 2026. From R2,000 starter sites to custom builds: what to pay, what to avoid, and what should always be included.">
+<meta name="twitter:description" content="Honest website pricing breakdown for South African small businesses in 2026. From R2,500 one-page websites to custom builds: what to pay, what to avoid, and what should always be included.">
 <meta name="geo.region" content="ZA-WC">
 <meta name="geo.placename" content="Cape Town">
 <title>How Much Does a Website Cost in South Africa in 2026? | WebCraft Atelier</title>
@@ -60,11 +60,6 @@
 html{scroll-behavior:auto;overflow-x:hidden}
 @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 body{font-family:var(--font-body);color:var(--text);background:var(--white);overflow-x:hidden;min-height:100vh}
-*{cursor:none}
-.cursor{position:fixed;width:10px;height:10px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);mix-blend-mode:normal;will-change:transform}
-.cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid var(--gold);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:width .12s ease-out,height .12s ease-out,border-color .12s ease-out;will-change:transform}
-body:has(a:hover) .cursor,body:has(button:hover) .cursor{width:18px;height:18px}
-body:has(a:hover) .cursor-ring,body:has(button:hover) .cursor-ring{width:52px;height:52px;border-color:var(--gold-light)}
 .logo{text-decoration:none;display:inline-flex;align-items:baseline;gap:0}
 .logo .l-web{font-family:'Modak',cursive;font-weight:400;color:var(--white);font-size:1.18rem;letter-spacing:0.01em}
 .logo .l-craft{font-family:'Quicksand',sans-serif;font-weight:400;color:var(--gold);font-size:0.98rem;text-transform:uppercase;letter-spacing:0.1em}
@@ -135,8 +130,7 @@ img{max-width:100%;height:auto}
 @media(max-width:600px){nav{padding:16px 20px}footer{padding:60px 24px 36px}.footer-top{grid-template-columns:1fr;gap:32px}.page-header{padding:120px 24px 60px}.wa-float{bottom:20px;right:20px;width:50px;height:50px}}
 @media(max-width:768px){nav{padding:16px 20px}nav.scrolled{padding:12px 20px}footer{padding:56px 24px 32px}.footer-top{grid-template-columns:1fr;gap:28px}}
 @media(max-width:1024px){.footer-top{grid-template-columns:1fr 1fr;gap:36px}}
-@media(pointer:coarse){.cursor,.cursor-ring{display:none!important}*{cursor:auto!important}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1!important;transform:none!important;transition:none!important}.cursor,.cursor-ring{display:none!important}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1!important;transform:none!important;transition:none!important}}
 
 /* ── READING PROGRESS ── */
 #readingProgress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--gold);z-index:9999;transition:width .1s linear}
@@ -212,14 +206,46 @@ img{max-width:100%;height:auto}
 /* ── POST PAGE RESPONSIVE ── */
 @media(max-width:1024px){.article-inner{grid-template-columns:1fr}.post-toc{display:none}}
 @media(max-width:768px){.article-outer{padding:48px 24px}.post-cta{padding:60px 24px}.related-section{padding:60px 24px}.related-grid{grid-template-columns:1fr}.post-article h2{font-size:1.5rem}.page-header{padding:120px 24px 60px}}
+/* ── Responsive fixes · phone 375 / tablet 768 / desktop 1280 ── */
+img,video,iframe{max-width:100%;height:auto}
+.footer-top>*,.quote-layout>*,.blog-featured-inner>*{min-width:0}
+.footer-col p,.info-value{overflow-wrap:anywhere}
+@media(max-width:1024px){
+  .quote-layout{grid-template-columns:1fr}
+  .summary-column{position:static}
+}
+@media(max-width:768px){
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px}
+  .quote-section{padding-left:20px;padding-right:20px}
+  .form-section{padding:24px 18px}
+  .form-row{grid-template-columns:1fr;gap:0}
+  /* Readable body copy: minimum 16px; small uppercase labels keep their size */
+  p:not([class*="label"]):not([class*="eyebrow"]):not([class*="title"]):not(.card-number):not(.footer-copy):not(.related-date):not(.toc-heading):not(.post-breadcrumb):not(.header-name),
+  .question-label,li,td,dd,.faq-answer-inner,.faq-question-text,.author-bio,.founder-caption,.retainer-desc,.package-tagline,.policy-step-desc,.radio-label{font-size:1rem!important}
+  input:not([type="radio"]):not([type="checkbox"]),select,textarea{font-size:16px!important;min-height:44px;width:100%}
+  /* Tap targets: minimum 44px */
+  .logo{padding:8px 0}
+  nav{padding-top:8px;padding-bottom:8px}
+  nav.scrolled{padding-top:6px;padding-bottom:6px}
+  .hamburger{min-width:44px;min-height:44px;align-items:center;justify-content:center}
+  .nav-drawer ul a,.nav-drawer .btn-nav,.btn-nav,.skip-link,.read-more-link,.card-link,.info-value a,.footer-col a{display:inline-flex;align-items:center;min-height:44px}
+  .footer-col ul li{margin-bottom:0}
+  .footer-col ul a{min-width:44px}
+  .social-icon{width:44px;height:44px}
+  .filter-pill,.card-view-btn,.card-open-btn,.btn-figma,.btn-close-modal,.radio-label,#cookieConsent button{min-height:44px}
+  .retainer-btn,.modal-actions .btn-figma,.modal-actions .btn-close-modal{min-height:44px}
+  .modal .modal-close{min-width:44px;min-height:44px}
+}
+@media(max-width:600px){
+  .footer-top{grid-template-columns:1fr;gap:28px}
+  .pricing-tiers{grid-template-columns:1fr}
+}
 </style>
 </head>
 
 <body>
 <a href="#main-content" class="skip-link">Skip to content</a>
 <div id="readingProgress" role="progressbar" aria-label="Reading progress"></div>
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
 
 <nav id="mainNav" role="navigation" aria-label="Main navigation">
   <a href="../index.html" class="logo"><span class="l-web">web</span><span class="l-craft">CRAFT</span><span class="l-atelier">atelier</span></a>
@@ -314,9 +340,9 @@ img{max-width:100%;height:auto}
 
       <p>This is the sweet spot for most South African small and medium businesses. You get custom design, a professional build, basic SEO, mobile responsiveness, and a real human to work with throughout the project.</p>
 
-      <p>At <strong>WebCraft Atelier</strong>, for example, our packages start at <strong>R2,000 for a Launch Page</strong> (ideal for businesses that need a fast, polished single-page presence) and range up to <strong>R8,500 for our Premium package</strong>, which includes up to 8 pages, advanced UI/UX, a custom contact system, and a 30-day post-launch support window.</p>
+      <p>At <strong>WebCraft Atelier</strong>, for example, our packages start at <strong>R2,500 for Launch</strong>, a one-page website or portfolio, and go up to <strong>R9,000 for Professional</strong>, which adds brand identity and business integrations such as a booking system. Every package includes a monthly retainer from month two (R250, R650 or R850/month), and the first month is covered by the build. Software and automation projects are quoted per project as a Custom Build.</p>
 
-      <p>Our mid-range <strong>Professional package at R5,500</strong> is genuinely the most popular choice for Cape Town service businesses: restaurants, salons, law firms, estate agents, and health practitioners who need to look credible online without breaking the bank.</p>
+      <p>Our <strong>Professional package at R9,000</strong> (plus R850/month) is the most popular choice for Cape Town service businesses: restaurants, salons, law firms, estate agents, and health practitioners who need to look credible online without breaking the bank.</p>
 
       <h3>E-Commerce Websites (R8,000 – R40,000+)</h3>
 
@@ -336,7 +362,7 @@ img{max-width:100%;height:auto}
 
       <p><strong>SSL certificate:</strong> often included in hosting packages, but worth confirming. Non-negotiable for credibility and Google ranking.</p>
 
-      <p><strong>Monthly maintenance:</strong> software updates, backups, uptime monitoring. At WebCraft Atelier, we offer monthly maintenance as an add-on from <strong>R650/month</strong>.</p>
+      <p><strong>Monthly maintenance:</strong> software updates, backups, uptime monitoring. At WebCraft Atelier, monthly maintenance is part of every package through a retainer from <strong>R250/month</strong>, starting from month two.</p>
 
       <p><strong>SEO:</strong> basic on-page SEO should come standard (and it does in all our packages). Advanced SEO, meaning ongoing keyword strategy, content, and link building, is a separate service.</p>
 
@@ -354,19 +380,19 @@ img{max-width:100%;height:auto}
         <li>At least one round of design revisions</li>
       </ul>
 
-      <p>At WebCraft Atelier, every single package (from our R2,000 Launch Page right through to our R8,500 Premium build) includes custom design, mobile optimisation, 2 rounds of design and content revisions, a contact form, Google Maps, social media buttons, WhatsApp chat integration, and Google Analytics setup. No hidden extras.</p>
+      <p>At WebCraft Atelier, every single package (from Launch at R2,500 right through to Professional at R9,000) includes custom design, mobile optimisation, 2 rounds of design and content revisions, a contact form, Google Maps, social media buttons, WhatsApp chat integration, and Google Analytics setup. No hidden extras.</p>
 
       <h2 id="addons">Common Add-Ons Worth Considering</h2>
 
       <p>Once you have your base website, there are a few upgrades that are genuinely worth the investment for the right business:</p>
 
-      <p><strong>A blog or news section (R1,200 add-on at WebCraft Atelier):</strong> if you want to attract organic Google traffic over time, a blog is one of the highest-ROI investments a small business can make. The post you're reading right now is proof of that strategy in action.</p>
+      <p><strong>A blog or news section:</strong> if you want to attract organic Google traffic over time, a blog is one of the highest-ROI investments a small business can make. The post you're reading right now is proof of that strategy in action.</p>
 
-      <p><strong>A booking or appointment system (R2,200):</strong> essential for salons, medical practices, consultants, and anyone who takes appointments. Saves time and reduces no-shows.</p>
+      <p><strong>A booking or appointment system (included in Professional):</strong> essential for salons, medical practices, consultants, and anyone who takes appointments. Saves time and reduces no-shows.</p>
 
-      <p><strong>Advanced SEO package (R2,800):</strong> goes beyond the basics to build a keyword strategy, optimise your content, and improve your Google ranking over time. Particularly valuable for businesses in competitive Cape Town markets.</p>
+      <p><strong>Advanced SEO package:</strong> goes beyond the basics to build a keyword strategy, optimise your content, and improve your Google ranking over time. Particularly valuable for businesses in competitive Cape Town markets.</p>
 
-      <p><strong>Logo and brand identity (R2,000):</strong> if your branding is inconsistent or dated, a new logo design bundled with your website project ensures everything looks cohesive from day one.</p>
+      <p><strong>Logo and brand identity (included in Professional):</strong> if your branding is inconsistent or dated, a new logo design bundled with your website project ensures everything looks cohesive from day one.</p>
 
       <h2 id="is-cheap-worth-it">Is Cheap Web Design Worth It in South Africa?</h2>
 
@@ -385,9 +411,9 @@ img{max-width:100%;height:auto}
       <p>For a typical small business website, expect:</p>
 
       <ul class="post-list">
-        <li><strong>Launch Page (1 page):</strong> 3–5 working days</li>
-        <li><strong>Starter or Professional (3–6 pages):</strong> 2–4 weeks</li>
-        <li><strong>Premium or E-commerce:</strong> 4–8 weeks</li>
+        <li><strong>Launch (1 page):</strong> 3–5 working days</li>
+        <li><strong>Starter or Professional (multi-page):</strong> 2–4 weeks</li>
+        <li><strong>Custom Build or E-commerce:</strong> 4–8 weeks</li>
       </ul>
 
       <p>These timelines assume your content (text, images, logo) is ready. If it isn't, add 1–2 weeks. Rush builds are possible but usually carry a surcharge.</p>
@@ -419,14 +445,14 @@ img{max-width:100%;height:auto}
         </tbody>
       </table>
 
-      <p>Most small businesses in South Africa will find their sweet spot somewhere between <strong>R3,500 and R8,500</strong> for a well-designed, professionally built website that actually performs.</p>
+      <p>Most small businesses in South Africa will find their sweet spot somewhere between <strong>R2,500 and R9,000</strong> for a well-designed, professionally built website that actually performs.</p>
 
       <!-- Author Box -->
       <div class="author-box">
         <div class="author-avatar">A</div>
         <div>
           <div class="author-name">WebCraft Atelier</div>
-          <div class="author-bio">Cape Town web design studio helping South African businesses build beautiful, high-performing websites. Packages from R2,000.</div>
+          <div class="author-bio">Cape Town web design studio helping South African businesses build beautiful, high-performing websites. Packages from R2,500.</div>
         </div>
       </div>
 
@@ -454,7 +480,7 @@ img{max-width:100%;height:auto}
   <div class="post-cta-inner">
     <p class="post-cta-eyebrow reveal">Ready to Get Started?</p>
     <h2 class="reveal d1">Get a Transparent Quote from WebCraft Atelier</h2>
-    <p class="reveal d2">Packages from R2,000 · No hidden fees · We reply within 24 hours</p>
+    <p class="reveal d2">Packages from R2,500 · No hidden fees · We reply within 24 hours</p>
     <div class="post-cta-btns reveal d3">
       <a href="../pricing.html" class="btn-primary">View Our Pricing →</a>
       <a href="../contact.html" class="btn-secondary">Get in Touch →</a>
@@ -506,7 +532,7 @@ img{max-width:100%;height:auto}
       <ul><li><a href="../faq.html">FAQ</a></li><li><a href="../pricing.html">Pricing</a></li></ul>
       <br>
       <h4>Contact Us</h4>
-      <p>code@webcraftatelier.co.za<br>+27 61 785 0140<br>Cape Town, South Africa, 8000</p>
+      <p>avuyileinnocentdlokweni@gmail.com<br>+27 61 785 0140<br>Cape Town, South Africa, 8000</p>
     </div>
     <div class="footer-col">
       <h4>Navigate</h4>
@@ -547,14 +573,6 @@ img{max-width:100%;height:auto}
 
 
 <script>
-(function(){
-  var cur=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
-  if(!window.matchMedia('(pointer:fine)').matches)return;
-  if(!cur||!ring)return;
-  var mx=0,my=0,rx=0,ry=0;
-  document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;});
-  (function tick(){rx+=(mx-rx)*.14;ry+=(my-ry)*.14;cur.style.left=mx+'px';cur.style.top=my+'px';ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(tick);})();
-})();
 var nav=document.getElementById('mainNav');
 window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>60);});
 document.querySelectorAll('.reveal').forEach(function(el){

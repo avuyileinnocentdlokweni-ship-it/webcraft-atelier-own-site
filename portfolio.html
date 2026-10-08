@@ -33,11 +33,6 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:var(--font-body);color:var(--text);background:var(--white);overflow-x:hidden}
-*{cursor:none}
-.cursor{position:fixed;width:10px;height:10px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:width .2s,height .2s;mix-blend-mode:multiply}
-.cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid var(--gold);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:all .12s ease-out}
-body:has(a:hover) .cursor,body:has(button:hover) .cursor{width:18px;height:18px}
-body:has(a:hover) .cursor-ring,body:has(button:hover) .cursor-ring{width:52px;height:52px;border-color:var(--gold-light)}
 
 .logo{text-decoration:none;display:inline-flex;align-items:baseline;gap:0}
 .logo .l-web{font-family:'Modak',cursive;font-weight:400;color:var(--white);font-size:1.18rem;letter-spacing:0.01em}
@@ -198,14 +193,9 @@ img{max-width:100%;height:auto}
 .skip-link:focus{top:16px}
 a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
 
-@media(pointer:coarse){.cursor,.cursor-ring{display:none!important}*{cursor:auto!important}}
 
 /* ── Performance & Accessibility Fixes ── */
 
-/* 1. Cursor: remove mix-blend-mode (forces software compositing),
-      add will-change so the browser promotes to its own GPU layer */
-.cursor{mix-blend-mode:normal;will-change:transform}
-.cursor-ring{transition:width .12s ease-out,height .12s ease-out,border-color .12s ease-out;will-change:transform}
 
 /* 2. Replace transition:all with specific properties only.
       'all' catches font-size, width, height — expensive & unintended. */
@@ -244,18 +234,49 @@ html{scroll-behavior:auto}
     transition:none!important
   }
   .hero-bg{animation:none!important;transform:scale(1)!important}
-  .cursor,.cursor-ring{display:none!important}
+}
+/* ── Responsive fixes · phone 375 / tablet 768 / desktop 1280 ── */
+img,video,iframe{max-width:100%;height:auto}
+.footer-top>*,.quote-layout>*,.blog-featured-inner>*{min-width:0}
+.footer-col p,.info-value{overflow-wrap:anywhere}
+@media(max-width:1024px){
+  .quote-layout{grid-template-columns:1fr}
+  .summary-column{position:static}
+}
+@media(max-width:768px){
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px}
+  .quote-section{padding-left:20px;padding-right:20px}
+  .form-section{padding:24px 18px}
+  .form-row{grid-template-columns:1fr;gap:0}
+  /* Readable body copy: minimum 16px; small uppercase labels keep their size */
+  p:not([class*="label"]):not([class*="eyebrow"]):not([class*="title"]):not(.card-number):not(.footer-copy):not(.related-date):not(.toc-heading):not(.post-breadcrumb):not(.header-name),
+  .question-label,li,td,dd,.faq-answer-inner,.faq-question-text,.author-bio,.founder-caption,.retainer-desc,.package-tagline,.policy-step-desc,.radio-label{font-size:1rem!important}
+  input:not([type="radio"]):not([type="checkbox"]),select,textarea{font-size:16px!important;min-height:44px;width:100%}
+  /* Tap targets: minimum 44px */
+  .logo{padding:8px 0}
+  nav{padding-top:8px;padding-bottom:8px}
+  nav.scrolled{padding-top:6px;padding-bottom:6px}
+  .hamburger{min-width:44px;min-height:44px;align-items:center;justify-content:center}
+  .nav-drawer ul a,.nav-drawer .btn-nav,.btn-nav,.skip-link,.read-more-link,.card-link,.info-value a,.footer-col a{display:inline-flex;align-items:center;min-height:44px}
+  .footer-col ul li{margin-bottom:0}
+  .footer-col ul a{min-width:44px}
+  .social-icon{width:44px;height:44px}
+  .filter-pill,.card-view-btn,.card-open-btn,.btn-figma,.btn-close-modal,.radio-label,#cookieConsent button{min-height:44px}
+  .retainer-btn,.modal-actions .btn-figma,.modal-actions .btn-close-modal{min-height:44px}
+  .modal .modal-close{min-width:44px;min-height:44px}
+}
+@media(max-width:600px){
+  .footer-top{grid-template-columns:1fr;gap:28px}
+  .pricing-tiers{grid-template-columns:1fr}
 }
 </style>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"WebCraft Atelier","url":"https://www.webcraftatelier.co.za","logo":"https://www.webcraftatelier.co.za/images/logo-badge-light.png","image":"https://www.webcraftatelier.co.za/images/index-bg1.webp","description":"Cape Town web design studio crafting fast, elegant websites for businesses.","telephone":"+27617850140","email":"code@webcraftatelier.co.za","address":{"@type":"PostalAddress","addressLocality":"Cape Town","addressRegion":"Western Cape","postalCode":"8000","addressCountry":"ZA"},"sameAs":["https://www.instagram.com/webcraftatelier/","https://www.facebook.com/profile.php?id=61576513528126","https://www.linkedin.com/in/avuyile-dlokweni-759551209/"],"priceRange":"R3500 - R25000+","openingHours":"Mo-Fr 09:00-17:00"}
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"WebCraft Atelier","url":"https://www.webcraftatelier.co.za","logo":"https://www.webcraftatelier.co.za/images/logo-badge-light.png","image":"https://www.webcraftatelier.co.za/images/index-bg1.webp","description":"Cape Town web design studio crafting fast, elegant websites for businesses.","telephone":"+27617850140","email":"avuyileinnocentdlokweni@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Cape Town","addressRegion":"Western Cape","postalCode":"8000","addressCountry":"ZA"},"sameAs":["https://www.instagram.com/webcraftatelier/","https://www.facebook.com/profile.php?id=61576513528126","https://www.linkedin.com/in/avuyile-dlokweni-759551209/"],"priceRange":"R2500 - R9000+","openingHours":"Mo-Fr 09:00-17:00"}
 </script>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to content</a>
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
 
 <!-- Nav -->
 <nav id="mainNav" role="navigation" aria-label="Main navigation">
@@ -580,7 +601,7 @@ html{scroll-behavior:auto}
       <ul><li><a href="faq.html">FAQ</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="/cookie-policy.html">Cookie Policy</a></li></ul>
       <br>
       <h4>Contact Us</h4>
-      <p>code@webcraftatelier.co.za<br>+27 61 785 0140<br>Cape Town, South Africa, 8000</p>
+      <p>avuyileinnocentdlokweni@gmail.com<br>+27 61 785 0140<br>Cape Town, South Africa, 8000</p>
     </div>
     <div class="footer-col">
       <h4>Navigate</h4>
@@ -680,15 +701,6 @@ function handleBackdropClick(e){
 
 document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
 
-// ── Custom cursor ──
-(function(){
-  var cur=document.getElementById('cursor'), ring=document.getElementById('cursorRing');
-  if(!window.matchMedia('(pointer:fine)').matches)return;
-  if(!cur||!ring) return;
-  var mx=0, my=0, rx=0, ry=0;
-  document.addEventListener('mousemove', function(e){ mx=e.clientX; my=e.clientY; });
-  (function tick(){ rx+=(mx-rx)*.14; ry+=(my-ry)*.14; cur.style.left=mx+'px'; cur.style.top=my+'px'; ring.style.left=rx+'px'; ring.style.top=ry+'px'; requestAnimationFrame(tick); })();
-})();
 
 // ── Nav scroll ──
 var nav = document.getElementById('mainNav');

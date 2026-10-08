@@ -31,11 +31,6 @@
 html{scroll-behavior:auto;overflow-x:hidden}
 @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 body{font-family:var(--font-body);color:var(--text);background:var(--white);overflow-x:hidden;min-height:100vh}
-*{cursor:none}
-.cursor{position:fixed;width:10px;height:10px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);mix-blend-mode:normal;will-change:transform}
-.cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid var(--gold);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:width .12s ease-out,height .12s ease-out,border-color .12s ease-out;will-change:transform}
-body:has(a:hover) .cursor,body:has(button:hover) .cursor{width:18px;height:18px}
-body:has(a:hover) .cursor-ring,body:has(button:hover) .cursor-ring{width:52px;height:52px;border-color:var(--gold-light)}
 .logo{text-decoration:none;display:inline-flex;align-items:baseline;gap:0}
 .logo .l-web{font-family:'Modak',cursive;font-weight:400;color:var(--white);font-size:1.18rem;letter-spacing:0.01em}
 .logo .l-craft{font-family:'Quicksand',sans-serif;font-weight:400;color:var(--gold);font-size:0.98rem;text-transform:uppercase;letter-spacing:0.1em}
@@ -123,8 +118,7 @@ img{max-width:100%;height:auto}
 @media(max-width:600px){nav{padding:16px 20px}footer{padding:60px 24px 36px}.footer-top{grid-template-columns:1fr;gap:32px}.page-header{padding:120px 24px 60px}.wa-float{bottom:20px;right:20px;width:50px;height:50px}}
 @media(max-width:768px){nav{padding:16px 20px}nav.scrolled{padding:12px 20px}footer{padding:56px 24px 32px}.footer-top{grid-template-columns:1fr;gap:28px}}
 @media(max-width:1024px){.footer-top{grid-template-columns:1fr 1fr;gap:36px}}
-@media(pointer:coarse){.cursor,.cursor-ring{display:none!important}*{cursor:auto!important}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal,.reveal-left,.reveal-right{opacity:1!important;transform:none!important;transition:none!important}.cursor,.cursor-ring{display:none!important}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal,.reveal-left,.reveal-right{opacity:1!important;transform:none!important;transition:none!important}}
 
 /* ── BLOG INDEX ── */
 .blog-featured{background:var(--dark);padding:60px 80px}
@@ -167,13 +161,45 @@ img{max-width:100%;height:auto}
 .card-link:hover{gap:10px}
 @media(max-width:1024px){.blog-featured-inner{gap:40px}.posts-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:768px){.blog-featured{padding:48px 24px}.blog-featured-inner{grid-template-columns:1fr}.blog-grid-section{padding:60px 24px}.posts-grid{grid-template-columns:1fr}.blog-grid-header{flex-direction:column;align-items:flex-start}.section-cta{padding:80px 24px}}
+/* ── Responsive fixes · phone 375 / tablet 768 / desktop 1280 ── */
+img,video,iframe{max-width:100%;height:auto}
+.footer-top>*,.quote-layout>*,.blog-featured-inner>*{min-width:0}
+.footer-col p,.info-value{overflow-wrap:anywhere}
+@media(max-width:1024px){
+  .quote-layout{grid-template-columns:1fr}
+  .summary-column{position:static}
+}
+@media(max-width:768px){
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px}
+  .quote-section{padding-left:20px;padding-right:20px}
+  .form-section{padding:24px 18px}
+  .form-row{grid-template-columns:1fr;gap:0}
+  /* Readable body copy: minimum 16px; small uppercase labels keep their size */
+  p:not([class*="label"]):not([class*="eyebrow"]):not([class*="title"]):not(.card-number):not(.footer-copy):not(.related-date):not(.toc-heading):not(.post-breadcrumb):not(.header-name),
+  .question-label,li,td,dd,.faq-answer-inner,.faq-question-text,.author-bio,.founder-caption,.retainer-desc,.package-tagline,.policy-step-desc,.radio-label{font-size:1rem!important}
+  input:not([type="radio"]):not([type="checkbox"]),select,textarea{font-size:16px!important;min-height:44px;width:100%}
+  /* Tap targets: minimum 44px */
+  .logo{padding:8px 0}
+  nav{padding-top:8px;padding-bottom:8px}
+  nav.scrolled{padding-top:6px;padding-bottom:6px}
+  .hamburger{min-width:44px;min-height:44px;align-items:center;justify-content:center}
+  .nav-drawer ul a,.nav-drawer .btn-nav,.btn-nav,.skip-link,.read-more-link,.card-link,.info-value a,.footer-col a{display:inline-flex;align-items:center;min-height:44px}
+  .footer-col ul li{margin-bottom:0}
+  .footer-col ul a{min-width:44px}
+  .social-icon{width:44px;height:44px}
+  .filter-pill,.card-view-btn,.card-open-btn,.btn-figma,.btn-close-modal,.radio-label,#cookieConsent button{min-height:44px}
+  .retainer-btn,.modal-actions .btn-figma,.modal-actions .btn-close-modal{min-height:44px}
+  .modal .modal-close{min-width:44px;min-height:44px}
+}
+@media(max-width:600px){
+  .footer-top{grid-template-columns:1fr;gap:28px}
+  .pricing-tiers{grid-template-columns:1fr}
+}
 </style>
 </head>
 
 <body>
 <a href="#main-content" class="skip-link">Skip to content</a>
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
 
 <nav id="mainNav" role="navigation" aria-label="Main navigation">
   <a href="index.html" class="logo"><span class="l-web">web</span><span class="l-craft">CRAFT</span><span class="l-atelier">atelier</span></a>
@@ -230,7 +256,7 @@ img{max-width:100%;height:auto}
         <span class="post-readtime">May 2026 · 8 min read</span>
       </div>
       <h2 class="featured-title">How Much Does a Website Cost in South Africa in 2026?</h2>
-      <p class="featured-excerpt">Everything South African small business owners need to know about web design pricing, from R2,000 Launch Pages to custom enterprise builds. No jargon, just honest numbers.</p>
+      <p class="featured-excerpt">Everything South African small business owners need to know about web design pricing, from R2,500 Launch websites to custom software builds. No jargon, just honest numbers.</p>
       <a href="blog/website-cost-south-africa-2026.html" class="read-more-link">Read Article →</a>
     </div>
   </div>
@@ -327,7 +353,7 @@ img{max-width:100%;height:auto}
     <div class="cta-line reveal"></div>
     <p class="eyebrow reveal d1">Ready to Get Started?</p>
     <h2 class="reveal d1">Let's build your <em>website</em></h2>
-    <p class="reveal d2">Packages from R2,000 · No hidden fees · Delivered in 2–6 weeks</p>
+    <p class="reveal d2">Packages from R2,500 · No hidden fees · Delivered in 2–6 weeks</p>
     <div class="cta-btns reveal d3">
       <a href="pricing.html" class="btn-primary">View Pricing →</a>
     </div>
@@ -345,7 +371,7 @@ img{max-width:100%;height:auto}
       <ul><li><a href="faq.html">FAQ</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="/cookie-policy.html">Cookie Policy</a></li></ul>
       <br>
       <h4>Contact Us</h4>
-      <p>code@webcraftatelier.co.za<br>+27 61 785 0140<br>Cape Town, South Africa, 8000</p>
+      <p>avuyileinnocentdlokweni@gmail.com<br>+27 61 785 0140<br>Cape Town, South Africa, 8000</p>
     </div>
     <div class="footer-col">
       <h4>Navigate</h4>
@@ -386,14 +412,6 @@ img{max-width:100%;height:auto}
 
 
 <script>
-(function(){
-  var cur=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
-  if(!window.matchMedia('(pointer:fine)').matches)return;
-  if(!cur||!ring)return;
-  var mx=0,my=0,rx=0,ry=0;
-  document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;});
-  (function tick(){rx+=(mx-rx)*.14;ry+=(my-ry)*.14;cur.style.left=mx+'px';cur.style.top=my+'px';ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(tick);})();
-})();
 var nav=document.getElementById('mainNav');
 window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>60);});
 document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(function(el){
