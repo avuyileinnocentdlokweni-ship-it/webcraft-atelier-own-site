@@ -33,11 +33,6 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:hidden}
 body{font-family:var(--font-body);color:var(--text);background:var(--white);overflow-x:hidden;min-height:100vh}
-*{cursor:none}
-.cursor{position:fixed;width:10px;height:10px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:width .2s,height .2s;mix-blend-mode:multiply}
-.cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid var(--gold);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:all .12s ease-out}
-body:has(a:hover) .cursor,body:has(button:hover) .cursor{width:18px;height:18px}
-body:has(a:hover) .cursor-ring,body:has(button:hover) .cursor-ring{width:52px;height:52px;border-color:var(--gold-light)}
 .logo{text-decoration:none;display:inline-flex;align-items:baseline;gap:0}
 .logo .l-web{font-family:'Modak',cursive;font-weight:400;color:var(--white);font-size:1.18rem;letter-spacing:0.01em}
 .logo .l-craft{font-family:'Quicksand',sans-serif;font-weight:400;color:var(--gold);font-size:0.98rem;text-transform:uppercase;letter-spacing:0.1em}
@@ -203,14 +198,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 .wa-float svg{width:28px;height:28px;fill:#fff}
 @media(max-width:600px){.wa-float{bottom:20px;right:20px;width:50px;height:50px}}
 
-@media(pointer:coarse){.cursor,.cursor-ring{display:none!important}*{cursor:auto!important}}
 
 /* ── Performance & Accessibility Fixes ── */
 
-/* 1. Cursor: remove mix-blend-mode (forces software compositing),
-      add will-change so the browser promotes to its own GPU layer */
-.cursor{mix-blend-mode:normal;will-change:transform}
-.cursor-ring{transition:width .12s ease-out,height .12s ease-out,border-color .12s ease-out;will-change:transform}
 
 /* 2. Replace transition:all with specific properties only.
       'all' catches font-size, width, height — expensive & unintended. */
@@ -249,17 +239,48 @@ html{scroll-behavior:auto}
     transition:none!important
   }
   .hero-bg{animation:none!important;transform:scale(1)!important}
-  .cursor,.cursor-ring{display:none!important}
+}
+/* ── Responsive fixes · phone 375 / tablet 768 / desktop 1280 ── */
+img,video,iframe{max-width:100%;height:auto}
+.footer-top>*,.quote-layout>*,.blog-featured-inner>*{min-width:0}
+.footer-col p,.info-value{overflow-wrap:anywhere}
+@media(max-width:1024px){
+  .quote-layout{grid-template-columns:1fr}
+  .summary-column{position:static}
+}
+@media(max-width:768px){
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px}
+  .quote-section{padding-left:20px;padding-right:20px}
+  .form-section{padding:24px 18px}
+  .form-row{grid-template-columns:1fr;gap:0}
+  /* Readable body copy: minimum 16px; small uppercase labels keep their size */
+  p:not([class*="label"]):not([class*="eyebrow"]):not([class*="title"]):not(.card-number):not(.footer-copy):not(.related-date):not(.toc-heading):not(.post-breadcrumb):not(.header-name),
+  .question-label,li,td,dd,.faq-answer-inner,.faq-question-text,.author-bio,.founder-caption,.retainer-desc,.package-tagline,.policy-step-desc,.radio-label{font-size:1rem!important}
+  input:not([type="radio"]):not([type="checkbox"]),select,textarea{font-size:16px!important;min-height:44px;width:100%}
+  /* Tap targets: minimum 44px */
+  .logo{padding:8px 0}
+  nav{padding-top:8px;padding-bottom:8px}
+  nav.scrolled{padding-top:6px;padding-bottom:6px}
+  .hamburger{min-width:44px;min-height:44px;align-items:center;justify-content:center}
+  .nav-drawer ul a,.nav-drawer .btn-nav,.btn-nav,.skip-link,.read-more-link,.card-link,.info-value a,.footer-col a{display:inline-flex;align-items:center;min-height:44px}
+  .footer-col ul li{margin-bottom:0}
+  .footer-col ul a{min-width:44px}
+  .social-icon{width:44px;height:44px}
+  .filter-pill,.card-view-btn,.card-open-btn,.btn-figma,.btn-close-modal,.radio-label,#cookieConsent button{min-height:44px}
+  .retainer-btn,.modal-actions .btn-figma,.modal-actions .btn-close-modal{min-height:44px}
+  .modal .modal-close{min-width:44px;min-height:44px}
+}
+@media(max-width:600px){
+  .footer-top{grid-template-columns:1fr;gap:28px}
+  .pricing-tiers{grid-template-columns:1fr}
 }
 </style>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"WebCraft Atelier","url":"https://www.webcraftatelier.co.za","logo":"https://www.webcraftatelier.co.za/images/logo-badge-light.png","image":"https://www.webcraftatelier.co.za/images/index-bg1.webp","description":"Cape Town web design studio crafting fast, elegant websites for businesses.","telephone":"+27617850140","email":"code@webcraftatelier.co.za","address":{"@type":"PostalAddress","addressLocality":"Cape Town","addressRegion":"Western Cape","postalCode":"8000","addressCountry":"ZA"},"sameAs":["https://www.instagram.com/webcraftatelier/","https://www.facebook.com/profile.php?id=61576513528126","https://www.linkedin.com/in/avuyile-dlokweni-759551209/"],"priceRange":"R3500 - R25000+","openingHours":"Mo-Fr 09:00-17:00"}
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"WebCraft Atelier","url":"https://www.webcraftatelier.co.za","logo":"https://www.webcraftatelier.co.za/images/logo-badge-light.png","image":"https://www.webcraftatelier.co.za/images/index-bg1.webp","description":"Cape Town web design studio crafting fast, elegant websites for businesses.","telephone":"+27617850140","email":"avuyileinnocentdlokweni@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Cape Town","addressRegion":"Western Cape","postalCode":"8000","addressCountry":"ZA"},"sameAs":["https://www.instagram.com/webcraftatelier/","https://www.facebook.com/profile.php?id=61576513528126","https://www.linkedin.com/in/avuyile-dlokweni-759551209/"],"priceRange":"R2500 - R9000+","openingHours":"Mo-Fr 09:00-17:00"}
 </script>
 </head>
 <body>
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
 <nav id="mainNav" role="navigation" aria-label="Main navigation"><a href="index.html" class="logo"><span class="l-web">web</span><span class="l-craft">CRAFT</span><span class="l-atelier">atelier</span></a><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="faq.html" class="active">FAQ</a></li><li><a href="blog.html">Blog</a></li></ul><button class="btn-nav nav-cta-desktop" onclick="location.href='contact.html'">Get in Touch</button>
   <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
 </nav>
@@ -383,7 +404,7 @@ html{scroll-behavior:auto}
     <span class="faq-question-text">Can I update the website myself once it's done?</span>
     <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
   </button>
-  <div class="faq-answer"><div class="faq-answer-inner">Yes. Where applicable, we build sites with a user-friendly content management system (CMS) so you can update text, images, and basic content without needing a developer. We provide a handover session and documentation to walk you through it. For more complex updates or ongoing changes, we offer monthly maintenance retainers.</div></div>
+  <div class="faq-answer"><div class="faq-answer-inner">Yes. Where applicable, we build sites with a user-friendly content management system (CMS) so you can update text, images, and basic content without needing a developer. We provide a handover session and documentation to walk you through it. More complex updates and ongoing changes are covered by the monthly retainer included in every package.</div></div>
 </div>
 <div class="faq-item reveal d2">
   <button class="faq-question" aria-expanded="false">
@@ -391,7 +412,7 @@ html{scroll-behavior:auto}
     <span class="faq-question-text">Do you offer website maintenance after launch?</span>
     <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
   </button>
-  <div class="faq-answer"><div class="faq-answer-inner">Yes. We offer a 30-day complimentary support period after every launch. Beyond that, we have monthly maintenance retainer packages that cover software updates, security monitoring, content changes, performance checks, and priority support. Ask us about retainer options in your proposal discussion.</div></div>
+  <div class="faq-answer"><div class="faq-answer-inner">Yes. Every package includes a monthly retainer that covers software updates, security monitoring, content changes, performance checks, and priority support. Retainers start from month two. The first month is covered by the build. Launch is R250/month, Starter is R650/month, Professional is R850/month, and Custom Build retainers are quoted per project.</div></div>
 </div>
 <div class="faq-item reveal d3">
   <button class="faq-question" aria-expanded="false">
@@ -409,7 +430,7 @@ html{scroll-behavior:auto}
     <span class="faq-question-text">How much does a website cost?</span>
     <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
   </button>
-  <div class="faq-answer"><div class="faq-answer-inner">Every project is scoped and priced individually based on your specific requirements. As a guide, most of our projects fall between R8,000 and R35,000 depending on size, complexity, and functionality. We provide a detailed proposal with a fixed price before any work begins, no hidden costs, no surprise invoices.</div></div>
+  <div class="faq-answer"><div class="faq-answer-inner">We have four packages. Launch is R2,500 for a one-page website or portfolio, plus R250/month. Starter is R4,500 for a professional multi-page website, plus R650/month. Professional is R9,000 for a website with brand identity and business integrations such as a booking system, plus R850/month. Custom Build covers software and automation for professional service businesses and is quoted per project. The monthly retainer is part of every package and starts from month two, because the first month is covered by the build. Every price is confirmed in writing before any work begins, with no hidden costs and no surprise invoices.</div></div>
 </div>
 <div class="faq-item reveal d2">
   <button class="faq-question" aria-expanded="false">
@@ -417,7 +438,7 @@ html{scroll-behavior:auto}
     <span class="faq-question-text">What are your payment terms?</span>
     <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
   </button>
-  <div class="faq-answer"><div class="faq-answer-inner">We invoice via EFT (Electronic Funds Transfer). Our standard payment structure is 50% deposit to begin and 50% on project completion. For larger projects, we may offer a three-stage milestone payment plan. All payment terms are confirmed in writing before the project starts.</div></div>
+  <div class="faq-answer"><div class="faq-answer-inner">We invoice via EFT (Electronic Funds Transfer). For Launch, it's 50% on signing and 50% on delivery. For Starter and Professional, it's 50% on signing, 30% on design approval, and 20% on delivery before handover. Custom Build payment terms are set out in your project quote. The monthly retainer starts from month two. All payment terms are confirmed in writing before the project starts.</div></div>
 </div>
 
 <p class="faq-category-label reveal">Anything Else?</p>
@@ -435,7 +456,7 @@ html{scroll-behavior:auto}
     <span class="faq-question-text">How do I get started?</span>
     <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
   </button>
-  <div class="faq-answer"><div class="faq-answer-inner">Simply reach out via our contact form or email us directly at <a href="mailto:code@webcraftatelier.co.za">code@webcraftatelier.co.za</a>. We'll schedule a free discovery call to understand your project, answer your questions, and send you a tailored proposal, no pressure, no commitment.</div></div>
+  <div class="faq-answer"><div class="faq-answer-inner">Simply reach out via our contact form or email us directly at <a href="mailto:avuyileinnocentdlokweni@gmail.com">avuyileinnocentdlokweni@gmail.com</a>. We'll schedule a free discovery call to understand your project, answer your questions, and send you a tailored proposal, no pressure, no commitment.</div></div>
 </div>
 
 </section>
@@ -443,7 +464,7 @@ html{scroll-behavior:auto}
 <footer role="contentinfo">
   <div class="footer-top">
     <div class="footer-brand"><a href="index.html" class="logo"><span class="l-web">web</span><span class="l-craft">CRAFT</span><span class="l-atelier">atelier</span></a><p>Crafting beautiful, functional websites tailored to your vision and objectives.</p></div>
-    <div class="footer-col"><h4>Help &amp; Support</h4><ul><li><a href="faq.html">FAQ</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="/cookie-policy.html">Cookie Policy</a></li></ul><br><h4>Contact Us</h4><p><a href="mailto:code@webcraftatelier.co.za">code@webcraftatelier.co.za</a><br>+27 61 785 0140<br>Cape Town, South Africa, 8000</p></div>
+    <div class="footer-col"><h4>Help &amp; Support</h4><ul><li><a href="faq.html">FAQ</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="/cookie-policy.html">Cookie Policy</a></li></ul><br><h4>Contact Us</h4><p><a href="mailto:avuyileinnocentdlokweni@gmail.com">avuyileinnocentdlokweni@gmail.com</a><br>+27 61 785 0140<br>Cape Town, South Africa, 8000</p></div>
     <div class="footer-col"><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="about.html">About Us</a></li><li><a href="blog.html">Blog</a></li></ul></div>
     <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="faq.html">FAQ</a></li><li><a href="portfolio.html">Portfolio</a></li></ul></div>
   </div>
@@ -459,14 +480,6 @@ html{scroll-behavior:auto}
   </div>
 </footer>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-(function(){
-  var cur=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
-  if(!window.matchMedia('(pointer:fine)').matches)return;
-  if(!cur||!ring)return;
-  var mx=0,my=0,rx=0,ry=0;
-  document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;});
-  (function tick(){rx+=(mx-rx)*.14;ry+=(my-ry)*.14;cur.style.left=mx+'px';cur.style.top=my+'px';ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(tick);})();
-})();
 var nav=document.getElementById('mainNav');
 window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>60);});
 document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(function(el){

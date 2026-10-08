@@ -16,11 +16,6 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:var(--font-body);color:var(--text);background:var(--white);overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column}
-*{cursor:none}
-.cursor{position:fixed;width:10px;height:10px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:width .2s,height .2s;mix-blend-mode:multiply}
-.cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid var(--gold);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:all .12s ease-out}
-body:has(a:hover) .cursor,body:has(button:hover) .cursor{width:18px;height:18px}
-body:has(a:hover) .cursor-ring,body:has(button:hover) .cursor-ring{width:52px;height:52px;border-color:var(--gold-light)}
 .logo{text-decoration:none;display:inline-flex;align-items:baseline;gap:0}
 .logo .l-web{font-family:'Modak',cursive;font-weight:400;color:var(--white);font-size:1.18rem;letter-spacing:0.01em}
 .logo .l-craft{font-family:'Quicksand',sans-serif;font-weight:400;color:var(--gold);font-size:0.98rem;text-transform:uppercase;letter-spacing:0.1em}
@@ -31,10 +26,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:ce
 .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .35s cubic-bezier(0.76,0,0.24,1)}
 .nav-links a:hover{color:var(--white)}
 .nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
-.btn-nav{background:var(--white);border:1px solid var(--white);color:var(--dark);font-family:var(--font-body);font-size:0.78rem;font-weight:600;letter-spacing:0.1em;padding:10px 24px;border-radius:100px;transition:all .3s;cursor:none}
+.btn-nav{background:var(--white);border:1px solid var(--white);color:var(--dark);font-family:var(--font-body);font-size:0.78rem;font-weight:600;letter-spacing:0.1em;padding:10px 24px;border-radius:100px;transition:all .3s}
 .btn-nav:hover{background:transparent;color:var(--white);transform:translateY(-1px);box-shadow:0 8px 24px rgba(248,245,240,0.2)}
 /* Hamburger */
-.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px;cursor:none}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px}
 .hamburger span{display:block;width:24px;height:2px;background:var(--white);transition:all .3s}
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .hamburger.open span:nth-child(2){opacity:0}
@@ -55,9 +50,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:ce
 .error-title em{font-style:italic;color:var(--gold)}
 .error-desc{font-size:0.95rem;line-height:1.8;color:rgba(248,245,240,0.5);font-weight:300;margin-bottom:44px;max-width:420px;margin-left:auto;margin-right:auto}
 .error-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--dark);font-family:var(--font-body);font-size:0.82rem;font-weight:600;letter-spacing:0.1em;padding:16px 36px;border-radius:100px;text-decoration:none;transition:all .3s;cursor:none}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--dark);font-family:var(--font-body);font-size:0.82rem;font-weight:600;letter-spacing:0.1em;padding:16px 36px;border-radius:100px;text-decoration:none;transition:all .3s}
 .btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 12px 32px rgba(196,154,60,0.35)}
-.btn-outline{display:inline-flex;align-items:center;gap:10px;background:transparent;color:rgba(248,245,240,0.7);font-family:var(--font-body);font-size:0.82rem;font-weight:400;letter-spacing:0.08em;padding:16px 32px;border-radius:100px;border:1px solid rgba(248,245,240,0.2);text-decoration:none;transition:all .3s;cursor:none}
+.btn-outline{display:inline-flex;align-items:center;gap:10px;background:transparent;color:rgba(248,245,240,0.7);font-family:var(--font-body);font-size:0.82rem;font-weight:400;letter-spacing:0.08em;padding:16px 32px;border-radius:100px;border:1px solid rgba(248,245,240,0.2);text-decoration:none;transition:all .3s}
 .btn-outline:hover{color:var(--white);border-color:rgba(248,245,240,0.5);transform:translateY(-2px)}
 /* Footer */
 footer{background:var(--dark);color:rgba(248,245,240,0.7);padding:80px 80px 40px;border-top:1px solid rgba(248,245,240,0.06)}
@@ -99,14 +94,9 @@ footer{background:var(--dark);color:rgba(248,245,240,0.7);padding:80px 80px 40px
 .wa-float svg{width:28px;height:28px;fill:#fff}
 @media(max-width:600px){.wa-float{bottom:20px;right:20px;width:50px;height:50px}}
   
-@media(pointer:coarse){.cursor,.cursor-ring{display:none!important}*{cursor:auto!important}}
 
 /* ── Performance & Accessibility Fixes ── */
 
-/* 1. Cursor: remove mix-blend-mode (forces software compositing),
-      add will-change so the browser promotes to its own GPU layer */
-.cursor{mix-blend-mode:normal;will-change:transform}
-.cursor-ring{transition:width .12s ease-out,height .12s ease-out,border-color .12s ease-out;will-change:transform}
 
 /* 2. Replace transition:all with specific properties only.
       'all' catches font-size, width, height — expensive & unintended. */
@@ -145,14 +135,45 @@ html{scroll-behavior:auto}
     transition:none!important
   }
   .hero-bg{animation:none!important;transform:scale(1)!important}
-  .cursor,.cursor-ring{display:none!important}
+}
+/* ── Responsive fixes · phone 375 / tablet 768 / desktop 1280 ── */
+img,video,iframe{max-width:100%;height:auto}
+.footer-top>*,.quote-layout>*,.blog-featured-inner>*{min-width:0}
+.footer-col p,.info-value{overflow-wrap:anywhere}
+@media(max-width:1024px){
+  .quote-layout{grid-template-columns:1fr}
+  .summary-column{position:static}
+}
+@media(max-width:768px){
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px}
+  .quote-section{padding-left:20px;padding-right:20px}
+  .form-section{padding:24px 18px}
+  .form-row{grid-template-columns:1fr;gap:0}
+  /* Readable body copy: minimum 16px; small uppercase labels keep their size */
+  p:not([class*="label"]):not([class*="eyebrow"]):not([class*="title"]):not(.card-number):not(.footer-copy):not(.related-date):not(.toc-heading):not(.post-breadcrumb):not(.header-name),
+  .question-label,li,td,dd,.faq-answer-inner,.faq-question-text,.author-bio,.founder-caption,.retainer-desc,.package-tagline,.policy-step-desc,.radio-label{font-size:1rem!important}
+  input:not([type="radio"]):not([type="checkbox"]),select,textarea{font-size:16px!important;min-height:44px;width:100%}
+  /* Tap targets: minimum 44px */
+  .logo{padding:8px 0}
+  nav{padding-top:8px;padding-bottom:8px}
+  nav.scrolled{padding-top:6px;padding-bottom:6px}
+  .hamburger{min-width:44px;min-height:44px;align-items:center;justify-content:center}
+  .nav-drawer ul a,.nav-drawer .btn-nav,.btn-nav,.skip-link,.read-more-link,.card-link,.info-value a,.footer-col a{display:inline-flex;align-items:center;min-height:44px}
+  .footer-col ul li{margin-bottom:0}
+  .footer-col ul a{min-width:44px}
+  .social-icon{width:44px;height:44px}
+  .filter-pill,.card-view-btn,.card-open-btn,.btn-figma,.btn-close-modal,.radio-label,#cookieConsent button{min-height:44px}
+  .retainer-btn,.modal-actions .btn-figma,.modal-actions .btn-close-modal{min-height:44px}
+  .modal .modal-close{min-width:44px;min-height:44px}
+}
+@media(max-width:600px){
+  .footer-top{grid-template-columns:1fr;gap:28px}
+  .pricing-tiers{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
 
 <nav id="mainNav" role="navigation" aria-label="Main navigation">
   <a href="index.html" class="logo">
@@ -225,17 +246,6 @@ html{scroll-behavior:auto}
 </a>
 
 <script>
-// Cursor
-(function(){
-  var dot=document.getElementById('cursor');
-  var ring=document.getElementById('cursorRing');
-  if(!window.matchMedia('(pointer:fine)').matches)return;
-  if(!dot||!ring)return;
-  document.addEventListener('mousemove',function(e){
-    dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px';
-    ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px';
-  });
-})();
 // Hamburger
 (function(){
   var hbg=document.getElementById('hamburger');

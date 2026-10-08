@@ -33,12 +33,6 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:hidden}
 body{font-family:var(--font-body);color:var(--text);background:var(--white);overflow-x:hidden;min-height:100vh}
-*{cursor:none}
-/* FIX 6: cursor always rendered on top, z-index safe */
-.cursor{position:fixed;width:10px;height:10px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:width .2s,height .2s;mix-blend-mode:multiply}
-.cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid var(--gold);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:all .12s ease-out}
-body:has(a:hover) .cursor,body:has(button:hover) .cursor{width:18px;height:18px}
-body:has(a:hover) .cursor-ring,body:has(button:hover) .cursor-ring{width:52px;height:52px;border-color:var(--gold-light)}
 /* FIX 1: Logo fonts */
 .logo{text-decoration:none;display:inline-flex;align-items:baseline;gap:0}
 .logo .l-web{font-family:'Modak',cursive;font-weight:400;color:var(--white);font-size:1.18rem;letter-spacing:0.01em}
@@ -194,6 +188,8 @@ footer{background:var(--dark);color:rgba(248,245,240,0.7);padding:80px 80px 40px
 .pricing-tier.featured .tier-name{color:var(--white)}
 .tier-price{font-size:0.82rem;color:var(--text-light);margin-bottom:32px;font-weight:300}
 .pricing-tier.featured .tier-price{color:rgba(248,245,240,0.5)}
+.tier-price strong{color:var(--gold);font-weight:500}
+@media(max-width:768px){.tier-price{font-size:1rem}}
 .tier-features{list-style:none;margin-bottom:0}
 .tier-features li{font-size:0.86rem;color:var(--text-light);padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.06);font-weight:300;display:flex;align-items:center;gap:10px}
 .pricing-tier.featured .tier-features li{color:rgba(248,245,240,0.6);border-bottom-color:rgba(248,245,240,0.06)}
@@ -299,14 +295,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 .wa-float svg{width:28px;height:28px;fill:#fff}
 @media(max-width:600px){.wa-float{bottom:20px;right:20px;width:50px;height:50px}}
 
-@media(pointer:coarse){.cursor,.cursor-ring{display:none!important}*{cursor:auto!important}}
 
 /* ── Performance & Accessibility Fixes ── */
 
-/* 1. Cursor: remove mix-blend-mode (forces software compositing),
-      add will-change so the browser promotes to its own GPU layer */
-.cursor{mix-blend-mode:normal;will-change:transform}
-.cursor-ring{transition:width .12s ease-out,height .12s ease-out,border-color .12s ease-out;will-change:transform}
 
 /* 2. Replace transition:all with specific properties only.
       'all' catches font-size, width, height — expensive & unintended. */
@@ -345,18 +336,49 @@ html{scroll-behavior:auto}
     transition:none!important
   }
   .hero-bg{animation:none!important;transform:scale(1)!important}
-  .cursor,.cursor-ring{display:none!important}
+}
+/* ── Responsive fixes · phone 375 / tablet 768 / desktop 1280 ── */
+img,video,iframe{max-width:100%;height:auto}
+.footer-top>*,.quote-layout>*,.blog-featured-inner>*{min-width:0}
+.footer-col p,.info-value{overflow-wrap:anywhere}
+@media(max-width:1024px){
+  .quote-layout{grid-template-columns:1fr}
+  .summary-column{position:static}
+}
+@media(max-width:768px){
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px}
+  .quote-section{padding-left:20px;padding-right:20px}
+  .form-section{padding:24px 18px}
+  .form-row{grid-template-columns:1fr;gap:0}
+  /* Readable body copy: minimum 16px; small uppercase labels keep their size */
+  p:not([class*="label"]):not([class*="eyebrow"]):not([class*="title"]):not(.card-number):not(.footer-copy):not(.related-date):not(.toc-heading):not(.post-breadcrumb):not(.header-name),
+  .question-label,li,td,dd,.faq-answer-inner,.faq-question-text,.author-bio,.founder-caption,.retainer-desc,.package-tagline,.policy-step-desc,.radio-label{font-size:1rem!important}
+  input:not([type="radio"]):not([type="checkbox"]),select,textarea{font-size:16px!important;min-height:44px;width:100%}
+  /* Tap targets: minimum 44px */
+  .logo{padding:8px 0}
+  nav{padding-top:8px;padding-bottom:8px}
+  nav.scrolled{padding-top:6px;padding-bottom:6px}
+  .hamburger{min-width:44px;min-height:44px;align-items:center;justify-content:center}
+  .nav-drawer ul a,.nav-drawer .btn-nav,.btn-nav,.skip-link,.read-more-link,.card-link,.info-value a,.footer-col a{display:inline-flex;align-items:center;min-height:44px}
+  .footer-col ul li{margin-bottom:0}
+  .footer-col ul a{min-width:44px}
+  .social-icon{width:44px;height:44px}
+  .filter-pill,.card-view-btn,.card-open-btn,.btn-figma,.btn-close-modal,.radio-label,#cookieConsent button{min-height:44px}
+  .retainer-btn,.modal-actions .btn-figma,.modal-actions .btn-close-modal{min-height:44px}
+  .modal .modal-close{min-width:44px;min-height:44px}
+}
+@media(max-width:600px){
+  .footer-top{grid-template-columns:1fr;gap:28px}
+  .pricing-tiers{grid-template-columns:1fr}
 }
 </style>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"WebCraft Atelier","url":"https://www.webcraftatelier.co.za","logo":"https://www.webcraftatelier.co.za/images/logo-badge-light.png","image":"https://www.webcraftatelier.co.za/images/index-bg1.webp","description":"Cape Town web design studio crafting fast, elegant websites for businesses.","telephone":"+27617850140","email":"code@webcraftatelier.co.za","address":{"@type":"PostalAddress","addressLocality":"Cape Town","addressRegion":"Western Cape","postalCode":"8000","addressCountry":"ZA"},"sameAs":["https://www.instagram.com/webcraftatelier/","https://www.facebook.com/profile.php?id=61576513528126","https://www.linkedin.com/in/avuyile-dlokweni-759551209/"],"priceRange":"R3500 - R25000+","openingHours":"Mo-Fr 09:00-17:00"}
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"WebCraft Atelier","url":"https://www.webcraftatelier.co.za","logo":"https://www.webcraftatelier.co.za/images/logo-badge-light.png","image":"https://www.webcraftatelier.co.za/images/index-bg1.webp","description":"Cape Town web design studio crafting fast, elegant websites for businesses.","telephone":"+27617850140","email":"avuyileinnocentdlokweni@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Cape Town","addressRegion":"Western Cape","postalCode":"8000","addressCountry":"ZA"},"sameAs":["https://www.instagram.com/webcraftatelier/","https://www.facebook.com/profile.php?id=61576513528126","https://www.linkedin.com/in/avuyile-dlokweni-759551209/"],"priceRange":"R2500 - R9000+","openingHours":"Mo-Fr 09:00-17:00"}
 </script>
 </head>
 
 <body>
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
 <nav id="mainNav" role="navigation" aria-label="Main navigation"><a href="index.html" class="logo"><span class="l-web">web</span><span class="l-craft">CRAFT</span><span class="l-atelier">atelier</span></a><ul class="nav-links"><li><a href="index.html" class="active">Home</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="faq.html">FAQ</a></li><li><a href="blog.html">Blog</a></li></ul><button class="btn-nav nav-cta-desktop" onclick="location.href='contact.html'">Get in Touch</button>
   <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
 </nav>
@@ -539,49 +561,47 @@ html{scroll-behavior:auto}
   </div>
   <div class="pricing-tiers">
     <div class="pricing-tier reveal">
-      <span class="tier-label">Launch Page</span>
-      <div class="tier-name">R2,000</div>
-      <div class="tier-price">1 page · 7 days delivery</div>
+      <span class="tier-label">Launch</span>
+      <div class="tier-name">R2,500</div>
+      <div class="tier-price"><strong>+ R250/month</strong> retainer · from month two</div>
       <ul class="tier-features">
+        <li>One-page website or portfolio</li>
         <li>100% custom design (no templates)</li>
-        <li>1 landing page, up to 6 sections</li>
-        <li>1 design revision round</li>
-        <li>All standard inclusions</li>
+        <li>Up to 6 content sections</li>
+        <li>50% on signing · 50% on delivery</li>
       </ul>
     </div>
     <div class="pricing-tier reveal">
       <span class="tier-label">Starter</span>
-      <div class="tier-name">R3,500</div>
-      <div class="tier-price">3–5 pages · 2 weeks delivery</div>
+      <div class="tier-name">R4,500</div>
+      <div class="tier-price"><strong>+ R650/month</strong> retainer · from month two</div>
       <ul class="tier-features">
+        <li>Professional multi-page website</li>
         <li>100% custom design (no templates)</li>
-        <li>3–5 pages</li>
         <li>2 design revision rounds</li>
-        <li>All standard inclusions</li>
+        <li>50% · 30% · 20% milestone payments</li>
       </ul>
     </div>
     <div class="pricing-tier featured reveal d1">
       <span class="tier-label">★ Most Popular · Professional</span>
-      <div class="tier-name">R5,500</div>
-      <div class="tier-price">Up to 10 pages · 3 weeks delivery</div>
+      <div class="tier-name">R9,000</div>
+      <div class="tier-price"><strong>+ R850/month</strong> retainer · from month two</div>
       <ul class="tier-features">
-        <li>100% custom design</li>
-        <li>Up to 10 pages</li>
-        <li>3 design revision rounds</li>
-        <li>2 design concepts to choose from</li>
-        <li>All standard inclusions</li>
+        <li>Professional multi-page website</li>
+        <li>Brand identity · logo &amp; brand design</li>
+        <li>Business integrations, e.g. booking</li>
+        <li>50% · 30% · 20% milestone payments</li>
       </ul>
     </div>
     <div class="pricing-tier reveal d2">
-      <span class="tier-label">Premium</span>
-      <div class="tier-name">R8,500</div>
-      <div class="tier-price">Custom scope · 4–6 weeks delivery</div>
+      <span class="tier-label">Custom Build</span>
+      <div class="tier-name">Quoted per project</div>
+      <div class="tier-price"><strong>+ Retainer</strong> quoted per project</div>
       <ul class="tier-features">
-        <li>Fully bespoke, unlimited pages</li>
-        <li>Unlimited revision rounds</li>
-        <li>Advanced animations &amp; interactions</li>
-        <li>Priority support throughout</li>
-        <li>All standard inclusions</li>
+        <li>Software &amp; automation</li>
+        <li>For professional service businesses</li>
+        <li>Scoped around your workflows</li>
+        <li>Quote confirmed in writing</li>
       </ul>
     </div>
   </div>
@@ -606,7 +626,7 @@ html{scroll-behavior:auto}
 <footer role="contentinfo">
   <div class="footer-top">
     <div class="footer-brand"><a href="index.html" class="logo"><span class="l-web">web</span><span class="l-craft">CRAFT</span><span class="l-atelier">atelier</span></a><p>Crafting beautiful, functional websites tailored to your vision and objectives.</p></div>
-    <div class="footer-col"><h4>Help &amp; Support</h4><ul><li><a href="faq.html">FAQ</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="/cookie-policy.html">Cookie Policy</a></li></ul><br><h4>Contact Us</h4><p><a href="mailto:code@webcraftatelier.co.za">code@webcraftatelier.co.za</a><br>+27 61 785 0140<br>Cape Town, South Africa, 8000</p></div>
+    <div class="footer-col"><h4>Help &amp; Support</h4><ul><li><a href="faq.html">FAQ</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="/cookie-policy.html">Cookie Policy</a></li></ul><br><h4>Contact Us</h4><p><a href="mailto:avuyileinnocentdlokweni@gmail.com">avuyileinnocentdlokweni@gmail.com</a><br>+27 61 785 0140<br>Cape Town, South Africa, 8000</p></div>
     <div class="footer-col"><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="about.html">About Us</a></li><li><a href="blog.html">Blog</a></li></ul></div>
     <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="faq.html">FAQ</a></li><li><a href="portfolio.html">Portfolio</a></li></ul></div>
   </div>
@@ -623,14 +643,6 @@ html{scroll-behavior:auto}
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-(function(){
-  var cur=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
-  if(!window.matchMedia('(pointer:fine)').matches)return;
-  if(!cur||!ring)return;
-  var mx=0,my=0,rx=0,ry=0;
-  document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;});
-  (function tick(){rx+=(mx-rx)*.14;ry+=(my-ry)*.14;cur.style.left=mx+'px';cur.style.top=my+'px';ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(tick);})();
-})();
 var nav=document.getElementById('mainNav');
 window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>60);});
 document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(function(el){
