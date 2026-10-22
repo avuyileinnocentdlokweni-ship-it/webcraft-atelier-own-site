@@ -156,6 +156,8 @@ footer{background:var(--dark);color:rgba(248,245,240,0.7);padding:80px 80px 40px
 .work-card h3 a:hover{color:var(--gold)}
 .work-tag{display:inline-block;font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;color:#6B7680;border:1px solid rgba(11,26,38,0.18);border-radius:100px;padding:4px 12px;margin-bottom:12px}
 .work-tag-client{color:var(--dark);background:var(--gold);border-color:var(--gold)}
+.work-tag{transition:color .4s,border-color .4s,background .4s}
+.work-card:hover .work-tag{color:var(--dark);background:var(--gold);border-color:var(--gold)}
 .work-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(0.76,0,0.24,1)}
 .work-card:hover::before{transform:scaleX(1)}
 .section-work .text-center{text-align:center}
