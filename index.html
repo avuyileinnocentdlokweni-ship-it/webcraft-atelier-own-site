@@ -100,6 +100,7 @@ footer{background:var(--dark);color:rgba(248,245,240,0.7);padding:80px 80px 40px
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,31,45,0.92) 0%,rgba(13,31,45,0.6) 60%,rgba(13,31,45,0.8) 100%)}
 .hero-content{position:relative;z-index:2;padding:140px 56px 80px;max-width:720px}
 .hero-eyebrow{font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;white-space:nowrap;opacity:0;transform:translateY(20px);animation:fadeUp .8s .2s forwards}
+@media(max-width:600px){.hero-eyebrow{white-space:normal;line-height:1.6}}
 .hero h1{font-family:var(--font-display);font-size:clamp(3rem,6vw,5.2rem);font-weight:300;line-height:1.08;color:var(--white);margin-bottom:28px;opacity:0;transform:translateY(30px);animation:fadeUp .9s .4s forwards}
 .hero h1 em{font-style:italic;color:var(--gold-light)}
 .hero p{font-size:1rem;font-weight:300;line-height:1.7;color:rgba(248,245,240,0.72);max-width:440px;margin-bottom:48px;opacity:0;transform:translateY(20px);animation:fadeUp .8s .6s forwards}
@@ -144,13 +145,17 @@ footer{background:var(--dark);color:rgba(248,245,240,0.7);padding:80px 80px 40px
 .section-work .services-header h2{color:var(--white)}
 .section-work .services-header p{color:rgba(248,245,240,0.55)}
 .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:64px}
-.work-card{position:relative;overflow:hidden;background:#0a1825;aspect-ratio:4/3;cursor:pointer}
+.work-card{position:relative;overflow:hidden;background:#F7F5F0;aspect-ratio:4/3;cursor:pointer}
 .work-card-inner{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px;text-align:center}
-.work-card-num{font-family:var(--font-display);font-size:4rem;font-weight:300;color:rgba(196,154,60,0.15);line-height:1;margin-bottom:16px}
-.work-card h3{font-size:1rem;font-weight:500;color:var(--white);margin-bottom:10px;letter-spacing:0.04em}
-.work-card p{font-size:0.82rem;color:rgba(248,245,240,0.45);font-weight:300;line-height:1.6}
+.work-card-num{font-family:var(--font-display);font-size:4rem;font-weight:300;color:rgba(196,154,60,0.55);line-height:1;margin-bottom:16px}
+.work-card h3{font-size:1rem;font-weight:500;color:var(--dark);margin-bottom:10px;letter-spacing:0.04em}
+.work-card p{font-size:0.82rem;color:#4A5560;font-weight:300;line-height:1.6}
 .work-card::after{content:'';position:absolute;inset:0;border:1px solid rgba(196,154,60,0);transition:border-color .4s}
-.work-card:hover::after{border-color:rgba(196,154,60,0.4)}
+.work-card:hover::after{border-color:rgba(196,154,60,0.6)}
+.work-card h3 a{color:inherit;text-decoration:none}
+.work-card h3 a:hover{color:var(--gold)}
+.work-tag{display:inline-block;font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;color:#6B7680;border:1px solid rgba(11,26,38,0.18);border-radius:100px;padding:4px 12px;margin-bottom:12px}
+.work-tag-client{color:var(--dark);background:var(--gold);border-color:var(--gold)}
 .work-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(0.76,0,0.24,1)}
 .work-card:hover::before{transform:scaleX(1)}
 .section-work .text-center{text-align:center}
@@ -406,7 +411,7 @@ img,video,iframe{max-width:100%;height:auto}
     <h1>Your business deserves a website people<br>actually <em>remember.</em></h1>
     <p>Custom web design &amp; development for businesses that take their brand seriously. Fast, elegant and conversion-focused.</p>
     <div class="hero-btns">
-      <a href="pricing.html" class="btn-primary">Get a Quote</a>
+      <a href="https://wa.me/27617850140?text=Hi%20Avuyile%2C%20I%27d%20like%20a%20free%20website%20assessment%20for%20my%20business." class="btn-primary" target="_blank" rel="noopener">Get a Free Website Assessment</a>
       <a href="#featured-work" class="btn-secondary">See Our Work</a>
     </div>
   </div>
@@ -440,28 +445,31 @@ img,video,iframe{max-width:100%;height:auto}
   <div class="services-header">
     <p class="section-label reveal" style="color:var(--gold)">Portfolio</p>
     <h2 class="reveal d1">Featured Work</h2>
-    <p class="reveal d2">A selection of recent projects, each one crafted with purpose</p>
+    <p class="reveal d2">Live client work and concept builds, each one crafted with purpose</p>
   </div>
   <div class="work-grid reveal">
     <div class="work-card">
       <div class="work-card-inner">
         <div class="work-card-num">01</div>
-        <h3>Silver Coring</h3>
+        <span class="work-tag work-tag-client">Client work</span>
+        <h3><a href="https://silvercoring.co.za" target="_blank" rel="noopener">Silver Coring</a></h3>
         <p>Cape Town core drilling, plumbing and demolition specialist, built for credibility and trust</p>
       </div>
     </div>
     <div class="work-card">
       <div class="work-card-inner">
         <div class="work-card-num">02</div>
+        <span class="work-tag">Concept</span>
         <h3>Clearstone Developments</h3>
-        <p>Luxury residential and boutique commercial developer with a refined, gallery-quality aesthetic</p>
+        <p>Concept site for a luxury residential and boutique commercial developer, with a refined, gallery-quality aesthetic</p>
       </div>
     </div>
     <div class="work-card">
       <div class="work-card-inner">
         <div class="work-card-num">03</div>
+        <span class="work-tag">Concept</span>
         <h3>Vertex Build Group</h3>
-        <p>Large-scale commercial construction firm, bold and data-driven to win new projects</p>
+        <p>Concept site for a commercial construction firm, with a bold, data-driven layout built to win new projects</p>
       </div>
     </div>
   </div>
@@ -571,8 +579,8 @@ img,video,iframe{max-width:100%;height:auto}
         <li>50% on signing · 50% on delivery</li>
       </ul>
     </div>
-    <div class="pricing-tier reveal">
-      <span class="tier-label">Starter</span>
+    <div class="pricing-tier featured reveal">
+      <span class="tier-label">★ Recommended · Starter</span>
       <div class="tier-name">R4,500</div>
       <div class="tier-price"><strong>+ R650/month</strong> retainer · from month two</div>
       <ul class="tier-features">
@@ -582,8 +590,8 @@ img,video,iframe{max-width:100%;height:auto}
         <li>50% · 30% · 20% milestone payments</li>
       </ul>
     </div>
-    <div class="pricing-tier featured reveal d1">
-      <span class="tier-label">★ Most Popular · Professional</span>
+    <div class="pricing-tier reveal d1">
+      <span class="tier-label">Professional</span>
       <div class="tier-name">R9,000</div>
       <div class="tier-price"><strong>+ R850/month</strong> retainer · from month two</div>
       <ul class="tier-features">
@@ -615,10 +623,10 @@ img,video,iframe{max-width:100%;height:auto}
   <div class="cta-content">
     <div class="cta-line reveal"></div>
     <h2 class="reveal d1">Ready to Build Your<br><em>Website?</em></h2>
-    <p class="reveal d2">Let's create a modern, high-performance website that helps your business grow online. Join the businesses that trust WebCraft Atelier to deliver results.</p>
+    <p class="reveal d2">Start with a free website assessment: three practical fixes for your current site or Google listing, with no obligation.</p>
     <div class="cta-btns reveal d3">
-      <a href="pricing.html" class="btn-primary">Start Your Project</a>
-      <a href="contact.html" class="btn-secondary">Get a Free Quote</a>
+      <a href="https://wa.me/27617850140?text=Hi%20Avuyile%2C%20I%27d%20like%20a%20free%20website%20assessment%20for%20my%20business." class="btn-primary" target="_blank" rel="noopener">Get a Free Website Assessment</a>
+      <a href="pricing.html" class="btn-secondary">See Pricing</a>
     </div>
   </div>
 </section>
