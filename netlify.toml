@@ -50,3 +50,13 @@
 # ─────────────────────────────────────────────────────────────────────────────
 # Netlify automatically uses /404.html for missing pages when the file exists
 # at the root. No explicit redirect rule is needed.
+
+# ─────────────────────────────────────────────────────────────────────────────
+# REDIRECTS
+# ─────────────────────────────────────────────────────────────────────────────
+# The blog post lives under /blog/. Send the old root copy there.
+[[redirects]]
+  from = "/website-cost-south-africa-2026.html"
+  to = "/blog/website-cost-south-africa-2026.html"
+  status = 301
+  force = true
